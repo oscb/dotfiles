@@ -1,0 +1,21 @@
+[user]
+	name = Oscar Bazaldua
+	email = 511911+oscb@users.noreply.github.com
+[diff]
+	tool = default-difftool
+[difftool "default-difftool"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[core]
+	editor = code --wait
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[credential]
+	credentialStore = keychain
+#  Remove this for Xcode
+# [url "ssh://git@github.com/"]
+# 	insteadOf = https://github.com/
+[init]
+	defaultBranch = master

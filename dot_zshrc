@@ -1,0 +1,120 @@
+# ZINIT
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+# If zinit starts after compinit
+# autoload -Uz _zinit
+# (( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Dracula theme
+zinit ice as"theme"
+zinit light dracula/zsh
+
+# Autocomplete
+zinit light marlonrichert/zsh-autocomplete
+
+# Autosuggest
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+zinit ice wait="0a" lucid atload="_zsh_autosuggest_start"
+zinit light zsh-users/zsh-autosuggestions
+
+# Completions
+zinit ice wait="0b" lucid blockf
+zinit light zsh-users/zsh-completions
+
+# Syntax Highlight
+zinit ice wait="0c" lucid atinit="zpcompinit;zpcdreplay"
+zinit light zdharma-continuum/fast-syntax-highlighting
+
+# History Substring Search
+zinit light zsh-users/zsh-history-substring-search
+
+# OhMyZSH Plugin Git
+zinit snippet OMZP::git
+
+# Atuin Shell History
+zinit load atuinsh/atuin
+
+# Segment Dotfiles
+# source ~/dev/src/github.com/segmentio/dotfiles/index.sh
+
+# Homebrew
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  BREW_DIR=$(brew --prefix)
+fi
+
+# Alias for git
+alias gith="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
+
+# Text Editor
+export MICRO_TRUECOLOR=1
+export EDITOR=micro
+export VISUAL="code --wait"
+
+# React Debugger
+export REACT_EDITOR="code --wait"
+
+# User
+export PATH=$PATH:$HOME/bin
+
+# Swift
+export TOOLCHAINS=swift
+
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Flutter
+export PATH=$PATH:$HOME/.pub-cache/bin
+
+# Ruby
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PATH="$BREW_DIR/opt/ruby/bin:$PATH"
+  export LDFLAGS="-L$BREW_DIR/opt/ruby/lib"
+  export CPPFLAGS="-I$BREW_DIR/opt/ruby/include"
+fi
+
+# Go
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export GOROOT=$BREW_DIR/opt/go/libexec
+fi
+export GOPATH=$HOME/golang
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# Mise (replacing ASDF)
+eval "$(mise activate zsh)"
+# Add Mise to path for Editors
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+
+# Init the Completion System
+autoload -U compinit && compinit -i
+
+# Zoxide autocomplete
+eval "$(zoxide init zsh --no-cmd)"
+alias z=__zoxide_z
+
+# Oh-my-posh
+eval "$(oh-my-posh init zsh --config ~/.omp.json)"
+
+# Fzf Catpuccin mocha
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+# Start zellij automatically
+# eval "$(zellij setup --generate-auto-start zsh)"
+
+# iTerm integration (Mac Only)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+  export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+fi
