@@ -1,4 +1,13 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
+
+# Homebrew (install if not present, then install all packages)
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+# Update homebrew recipes
+brew update
+
 brew bundle --no-lock --file=Brewfile
 {{ end -}}
