@@ -1,0 +1,8 @@
+{{-   include ".zshrc_base" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   include ".zshrc_mac" -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   include ".zshrc_linux" -}}
+{{- end -}}
+
+

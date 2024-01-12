@@ -37,14 +37,6 @@ zinit snippet OMZP::git
 # Atuin Shell History
 zinit load atuinsh/atuin
 
-# Segment Dotfiles
-# source ~/dev/src/github.com/segmentio/dotfiles/index.sh
-
-# Homebrew
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  BREW_DIR=$(brew --prefix)
-fi
-
 # Alias for git
 alias gith="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
 
@@ -74,21 +66,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Flutter
 export PATH=$PATH:$HOME/.pub-cache/bin
 
-# Ruby
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  export PATH="$BREW_DIR/opt/ruby/bin:$PATH"
-  export LDFLAGS="-L$BREW_DIR/opt/ruby/lib"
-  export CPPFLAGS="-I$BREW_DIR/opt/ruby/include"
-fi
-
-# Go
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  export GOROOT=$BREW_DIR/opt/go/libexec
-fi
-export GOPATH=$HOME/golang
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-
 # Mise (replacing ASDF)
 eval "$(mise activate zsh)"
 # Add Mise to path for Editors
@@ -112,9 +89,3 @@ export FZF_DEFAULT_OPTS=" \
 
 # Start zellij automatically
 # eval "$(zellij setup --generate-auto-start zsh)"
-
-# iTerm integration (Mac Only)
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-  export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
-fi

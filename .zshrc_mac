@@ -1,0 +1,25 @@
+
+# Homebrew
+export BREW_DIR=$(brew --prefix)
+
+# Go
+export GOROOT=$BREW_DIR/opt/go/libexec
+export GOPATH=$HOME/golang
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# Ruby
+export PATH="$BREW_DIR/opt/ruby/bin:$PATH"
+export LDFLAGS="-L$BREW_DIR/opt/ruby/lib"
+export CPPFLAGS="-I$BREW_DIR/opt/ruby/include"
+
+# iTerm integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+  export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+
+# Utils
+
+# Dumps all the Homebrew packages
+function dump-packages() {
+  brew bundle dump -f --all
+}
