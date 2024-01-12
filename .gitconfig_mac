@@ -1,0 +1,5 @@
+[credential]
+credentialStore = keychain
+#  Remove this for Xcode
+# [url "ssh://git@github.com/"]
+# 	insteadOf = https://github.com/

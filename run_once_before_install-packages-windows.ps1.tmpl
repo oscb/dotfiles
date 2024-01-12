@@ -1,0 +1,15 @@
+{{- if eq .chezmoi.os "windows" -}}
+# PowerShell Script to run winget import on a chezmoi template
+
+# Define the path to the chezmoi template file
+$templatePath = "/winget.json"
+
+# Check if the template file exists
+if (Test-Path -Path $templatePath) {
+    # Run winget import command using the template file
+    winget import --import-file $templatePath
+} else {
+    Write-Host "The specified template file does not exist: $templatePath"
+}
+
+{{ end -}}

@@ -12,10 +12,5 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[credential]
-	credentialStore = keychain
-#  Remove this for Xcode
-# [url "ssh://git@github.com/"]
-# 	insteadOf = https://github.com/
 [init]
 	defaultBranch = master
