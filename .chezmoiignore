@@ -1,6 +1,18 @@
 .DS_Store
 README.md
 
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if ne .chezmoi.os "darwin" }}
 Brewfile
+{{ end }}
+
+{{ if ne .chezmoi.os "windows"}}
+Documents/
+AppData/
+winget.json
 {{- end }}
+
+{{ if eq .chezmoi.os "windows"}}
+.config
+.zshrc
+.tmux.conf
+{{ end }}
