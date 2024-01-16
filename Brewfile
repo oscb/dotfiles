@@ -179,10 +179,8 @@ mas "1Password for Safari", id: 1569813296
 mas "Actions", id: 1586435171
 mas "AdGuard Home", id: 1543143740
 mas "Bakery", id: 1575220747
-mas "Bear", id: 1091189122
 mas "CardPointers", id: 1472875808
 mas "Color Picker", id: 1545870783
-mas "Cozy Grove", id: 1466130749
 mas "Craft", id: 1487937127
 mas "Dark Noise", id: 1465439395
 mas "Dark Reader for Safari", id: 1438243180
@@ -214,7 +212,6 @@ mas "Pages", id: 409201541
 mas "Pandan", id: 1569600264
 mas "Pasteboard Viewer", id: 1499215709
 mas "Pastel", id: 413897608
-mas "Pi-hole Remote", id: 1515445551
 mas "PiPifier", id: 1160374471
 mas "Pixelmator Pro", id: 1289583905
 mas "Plash", id: 1494023538
@@ -319,8 +316,6 @@ vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.remote-server"
 vscode "ms-vscode.vscode-serial-monitor"
 vscode "ms-vsliveshare.vsliveshare"
-vscode "ms-vsliveshare.vsliveshare-audio"
-vscode "ms-vsliveshare.vsliveshare-pack"
 vscode "msjsdiag.vscode-react-native"
 vscode "nick-lvov-dev.typescript-explicit-types"
 vscode "nrwl.angular-console"

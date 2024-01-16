@@ -22,7 +22,7 @@
 
 [tools]
 node = '20.7.0'
-ruby = '2.7.6'
+ruby = '3.3.0'
 kotlin = '1.8.0'
 python = '3.11.2'
 flutter = '3.10.1-stable'
