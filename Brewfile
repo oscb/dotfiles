@@ -10,6 +10,7 @@ tap "homebrew/services"
 tap "humanlogio/tap"
 tap "jakehilborn/jakehilborn"
 tap "jandedobbeleer/oh-my-posh"
+tap "mas-cli/tap"
 tap "microsoft/git"
 tap "osx-cross/arm"
 tap "osx-cross/avr"
@@ -95,6 +96,7 @@ brew "blacktop/tap/ipsw"
 brew "humanlogio/tap/humanlog"
 brew "jakehilborn/jakehilborn/displayplacer"
 brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+brew "mas-cli/tap/mas"
 brew "qmk/qmk/qmk"
 brew "tarkah/tickrs/tickrs"
 brew "wix/brew/applesimutils"
@@ -122,6 +124,7 @@ cask "gb-studio"
 cask "github"
 cask "godot"
 cask "google-chrome"
+cask "hiddenbar"
 cask "insomnia"
 cask "isimulator"
 cask "itch"
@@ -171,6 +174,68 @@ cask "xscope"
 cask "yubico-yubikey-manager"
 cask "zoom"
 cask "zulu11"
+mas "1Blocker", id: 1365531024
+mas "1Password for Safari", id: 1569813296
+mas "Actions", id: 1586435171
+mas "AdGuard Home", id: 1543143740
+mas "Bakery", id: 1575220747
+mas "Bear", id: 1091189122
+mas "CardPointers", id: 1472875808
+mas "Color Picker", id: 1545870783
+mas "Cozy Grove", id: 1466130749
+mas "Craft", id: 1487937127
+mas "Dark Noise", id: 1465439395
+mas "Dark Reader for Safari", id: 1438243180
+mas "Darkroom", id: 953286746
+mas "Deliveries", id: 290986013
+mas "Developer", id: 640199958
+mas "Dropover", id: 1355679052
+mas "GarageBand", id: 682658836
+mas "Gifski", id: 1351639930
+mas "GoodLinks", id: 1474335294
+mas "Goodnotes", id: 1444383602
+mas "HACK", id: 1464477788
+mas "Home Assistant", id: 1099568401
+mas "Hush", id: 1544743900
+mas "iMovie", id: 408981434
+mas "Infuse", id: 1136220934
+mas "Ivory", id: 6444602274
+mas "Jayson", id: 1468691718
+mas "Keepa - Price Tracker", id: 1533805339
+mas "Keynote", id: 409183694
+mas "Mela", id: 1568924476
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Noir", id: 1592917505
+mas "Notability", id: 360593530
+mas "Numbers", id: 409203825
+mas "Okta Extension App", id: 1439967473
+mas "One Thing", id: 1604176982
+mas "Pages", id: 409201541
+mas "Pandan", id: 1569600264
+mas "Pasteboard Viewer", id: 1499215709
+mas "Pastel", id: 413897608
+mas "Pi-hole Remote", id: 1515445551
+mas "PiPifier", id: 1160374471
+mas "Pixelmator Pro", id: 1289583905
+mas "Plash", id: 1494023538
+mas "Playgrounds", id: 1496833156
+mas "Poolsuite FM", id: 1514817810
+mas "Rakuten Cash Back", id: 1451893560
+mas "Reeder", id: 1529448980
+mas "Refined GitHub", id: 1519867270
+mas "Save to Matter", id: 1548677272
+mas "Slack", id: 803453959
+mas "Steam Link", id: 1246969117
+mas "Streaks", id: 963034692
+mas "Structured", id: 1499198946
+mas "Tailscale", id: 1475387142
+mas "TestFlight", id: 899247664
+mas "The Unarchiver", id: 425424353
+mas "Transporter", id: 1450874784
+mas "Userscripts-Mac-App", id: 1463298887
+mas "WiFi Explorer", id: 494803304
+mas "WireGuard", id: 1451685025
+mas "‎WhatsApp", id: 310633997
 vscode "aaron-bond.better-comments"
 vscode "achil.vscode-javascript-repl"
 vscode "alefragnani.Bookmarks"
@@ -188,6 +253,7 @@ vscode "Catppuccin.catppuccin-vsc"
 vscode "christian-kohler.npm-intellisense"
 vscode "christian-kohler.path-intellisense"
 vscode "Ciantic.keymapceditor-vsc"
+vscode "cmstead.js-codeformer"
 vscode "cmstead.jsrefactor"
 vscode "codezombiech.gitignore"
 vscode "cschlosser.doxdocgen"
@@ -232,6 +298,7 @@ vscode "ms-dotnettools.csharp"
 vscode "ms-dotnettools.vscode-dotnet-runtime"
 vscode "ms-python.isort"
 vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
 vscode "ms-toolsai.jupyter"
 vscode "ms-toolsai.jupyter-keymap"
 vscode "ms-toolsai.jupyter-renderers"
@@ -252,6 +319,7 @@ vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.remote-server"
 vscode "ms-vscode.vscode-serial-monitor"
 vscode "ms-vsliveshare.vsliveshare"
+vscode "ms-vsliveshare.vsliveshare-audio"
 vscode "ms-vsliveshare.vsliveshare-pack"
 vscode "msjsdiag.vscode-react-native"
 vscode "nick-lvov-dev.typescript-explicit-types"
@@ -270,6 +338,7 @@ vscode "redhat.java"
 vscode "redhat.vscode-xml"
 vscode "redhat.vscode-yaml"
 vscode "rust-lang.rust-analyzer"
+vscode "silvenon.mdx"
 vscode "sswg.swift-lang"
 vscode "stringham.move-ts"
 vscode "tamasfe.even-better-toml"
