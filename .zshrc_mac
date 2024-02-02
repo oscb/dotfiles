@@ -21,11 +21,18 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME/.pub-cache/bin
 
 # Go
-export GOPATH=$HOME/goprojs
+export GOPATH=$HOME/Projects/Go
 
 # iTerm integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
   export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+
+# Init the Completion System and add HomeBrew to FPath
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+autoload -Uz compinit && compinit -i
 
 # Utils
 

@@ -53,9 +53,6 @@ eval "$(mise activate zsh)"
 # Add Mise to path for Editors
 export PATH="$HOME/.local/share/mise/shims:$PATH"
 
-# Init the Completion System
-autoload -U compinit && compinit -i
-
 # Zoxide autocomplete
 eval "$(zoxide init zsh --no-cmd)"
 alias z=__zoxide_z

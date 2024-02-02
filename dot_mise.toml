@@ -28,6 +28,8 @@ python = '3.11.2'
 flutter = '3.10.1-stable'
 cocoapods = "latest"
 go = "latest"
+bun = "latest"
+deno = "latest"
 
 # terraform = '1.0.0'       # specify a single version
 # erlang = '26'             # specify a major version only
