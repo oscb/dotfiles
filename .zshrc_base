@@ -53,10 +53,6 @@ eval "$(mise activate zsh)"
 # Add Mise to path for Editors
 export PATH="$HOME/.local/share/mise/shims:$PATH"
 
-# Zoxide autocomplete
-eval "$(zoxide init zsh --no-cmd)"
-alias z=__zoxide_z
-
 # Oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.omp.json)"
 

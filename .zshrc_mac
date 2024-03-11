@@ -1,3 +1,6 @@
+# Zoxide autocomplete
+eval "$(zoxide init zsh --no-cmd)"
+alias z=__zoxide_z
 
 # Homebrew
 export BREW_DIR=$(brew --prefix)

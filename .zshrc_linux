@@ -1,2 +1,9 @@
+# Path (Do before zoxide, as it gets installed into this path)
+export PATH="$HOME/.local/bin:$PATH"
+
+# Zoxide autocomplete
+eval "$(zoxide init zsh --no-cmd)"
+alias z=__zoxide_z
+
 # Init the Completion System
 autoload -U compinit && compinit -i
