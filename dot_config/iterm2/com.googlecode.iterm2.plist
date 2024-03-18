@@ -18,6 +18,8 @@
 	<true/>
 	<key>ClosingTmuxWindowKillsTmuxWindows_selection</key>
 	<integer>1</integer>
+	<key>CmdClickWhenInactiveInvokesSemanticHistory</key>
+	<true/>
 	<key>CommandSelection</key>
 	<true/>
 	<key>Custom Color Presets</key>
@@ -5960,11 +5962,11 @@
 			<key>Semantic History</key>
 			<dict>
 				<key>action</key>
-				<string>editor</string>
+				<string>best editor</string>
 				<key>editor</key>
 				<string>com.microsoft.VSCode</string>
 				<key>text</key>
-				<string></string>
+				<string>[ -z "\2" ] &amp;&amp; echo code \1 || echo code +\2 \1</string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>

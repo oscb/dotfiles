@@ -27,6 +27,7 @@ brew "bat"
 brew "btop"
 brew "cheat"
 brew "chezmoi"
+brew "cocoapods"
 brew "gnutls"
 brew "qemu"
 brew "lima"
@@ -51,6 +52,7 @@ brew "git"
 brew "gnupg"
 brew "smartmontools"
 brew "gsmartcontrol"
+brew "gstreamer"
 brew "htop"
 brew "httpie"
 brew "ios-deploy"
@@ -69,6 +71,7 @@ brew "pandoc"
 brew "pgcli"
 brew "tcl-tk"
 brew "python-tk@3.11"
+brew "python@3.10"
 brew "rclone"
 brew "sampler"
 brew "sd"
@@ -106,7 +109,8 @@ cask "1password"
 cask "1password-cli"
 cask "android-studio"
 cask "apparency"
-cask "autodesk-fusion360"
+cask "arc"
+cask "autodesk-fusion"
 cask "balenaetcher"
 cask "blackhole-2ch"
 cask "blender"
@@ -157,6 +161,7 @@ cask "sf-symbols"
 cask "shottr"
 cask "sidequest"
 cask "signal"
+cask "sim-genie"
 cask "spacedrive"
 cask "steam"
 cask "syncthing"
@@ -175,6 +180,7 @@ cask "xcodes"
 cask "xscope"
 cask "yubico-yubikey-manager"
 cask "zoom"
+cask "zulu11"
 mas "1Blocker", id: 1365531024
 mas "1Password for Safari", id: 1569813296
 mas "Actions", id: 1586435171
@@ -190,6 +196,7 @@ mas "Day One", id: 1055511498
 mas "Deliveries", id: 290986013
 mas "Developer", id: 640199958
 mas "Dropover", id: 1355679052
+mas "Fiery Feeds", id: 1158763303
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "GoodLinks", id: 1474335294
