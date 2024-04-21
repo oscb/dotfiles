@@ -1,11 +1,14 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-01-12T10:58:12.348-00:00",
+	"CreationDate" : "2024-04-20T10:41:05.925-00:00",
 	"Sources" : 
 	[
 		{
 			"Packages" : 
 			[
+				{
+					"PackageIdentifier" : "Readdle.Spark"
+				},
 				{
 					"PackageIdentifier" : "AgileBits.1Password"
 				},
@@ -14,12 +17,6 @@
 				},
 				{
 					"PackageIdentifier" : "7zip.7zip"
-				},
-				{
-					"PackageIdentifier" : "Guru3D.Afterburner"
-				},
-				{
-					"PackageIdentifier" : "Argotronic.ArgusMonitor"
 				},
 				{
 					"PackageIdentifier" : "Canonical.Ubuntu.2204"
@@ -61,10 +58,19 @@
 					"PackageIdentifier" : "Microsoft.WindowsTerminal"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.Teams.Free"
+				},
+				{
+					"PackageIdentifier" : "Meta.Oculus"
+				},
+				{
 					"PackageIdentifier" : "JanDeDobbeleer.OhMyPosh"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.OneDrive"
+				},
+				{
+					"PackageIdentifier" : "Guru3D.RTSS"
 				},
 				{
 					"PackageIdentifier" : "Rclone.Rclone"
@@ -80,6 +86,9 @@
 				},
 				{
 					"PackageIdentifier" : "eliboa.TegraRcmGUI"
+				},
+				{
+					"PackageIdentifier" : "TheBrowserCompany.Arc"
 				},
 				{
 					"PackageIdentifier" : "Ubisoft.Connect"
@@ -103,7 +112,7 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.3_1"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
 					"PackageIdentifier" : "Appest.TickTick"
@@ -112,22 +121,31 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.5"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+					"PackageIdentifier" : "EclipseAdoptium.Temurin.17.JDK"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
 				},
 				{
 					"PackageIdentifier" : "Amazon.Games"
 				},
 				{
 					"PackageIdentifier" : "Logitech.GHUB"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
@@ -139,16 +157,19 @@
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
 				},
 				{
-					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+					"PackageIdentifier" : "Apple.iTunes"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WindowsPCHealthCheck"
 				},
 				{
-					"PackageIdentifier" : "Apple.iTunes"
+					"PackageIdentifier" : "Transmission.Transmission"
 				},
 				{
 					"PackageIdentifier" : "TechPowerUp.GPU-Z"
+				},
+				{
+					"PackageIdentifier" : "VideoLAN.VLC"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
@@ -157,46 +178,34 @@
 					"PackageIdentifier" : "ViGEm.ViGEmBus"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
-				},
-				{
-					"PackageIdentifier" : "Transmission.Transmission"
-				},
-				{
-					"PackageIdentifier" : "Nvidia.GeForceExperience"
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
+					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+				},
+				{
 					"PackageIdentifier" : "SteamGridDB.RomManager"
-				},
-				{
-					"PackageIdentifier" : "EclipseAdoptium.Temurin.17.JDK"
-				},
-				{
-					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
-					"PackageIdentifier" : "ElectronicArts.EADesktop"
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
+					"PackageIdentifier" : "ElectronicArts.EADesktop"
 				},
 				{
 					"PackageIdentifier" : "SyncTrayzor.SyncTrayzor"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
 				}
 			],
 			"SourceDetails" : 
@@ -206,22 +215,7 @@
 				"Name" : "winget",
 				"Type" : "Microsoft.PreIndexed.Package"
 			}
-		},
-		{
-			"Packages" : 
-			[
-				{
-					"PackageIdentifier" : "9NBLGGH34GTL"
-				}
-			],
-			"SourceDetails" : 
-			{
-				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-				"Identifier" : "StoreEdgeFD",
-				"Name" : "msstore",
-				"Type" : "Microsoft.Rest"
-			}
 		}
 	],
-	"WinGetVersion" : "1.6.3482"
+	"WinGetVersion" : "1.7.10861"
 }
