@@ -1,6 +1,9 @@
+# Antidote
+source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+antidote load
+
 # Zoxide autocomplete
-eval "$(zoxide init zsh --no-cmd)"
-alias z=__zoxide_z
+eval "$(zoxide init zsh)"
 
 # Homebrew
 export BREW_DIR=$(brew --prefix)

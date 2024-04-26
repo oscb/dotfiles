@@ -1,0 +1,43 @@
+# .zsh_plugins.txt
+
+zsh-users/zsh-completions
+olets/zsh-abbr    kind:defer
+
+ohmyzsh/ohmyzsh path:lib
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/magic-enter
+
+# or lighter-weight ones like zsh-utils
+belak/zsh-utils path:editor
+belak/zsh-utils path:history
+belak/zsh-utils path:prompt
+belak/zsh-utils path:utility
+belak/zsh-utils path:completion
+
+# popular fish-like plugins
+mattmc3/zfunctions
+zsh-users/zsh-history-substring-search
+
+# Dracula theme
+dracula/zsh
+
+# Autocomplete
+marlonrichert/zsh-autocomplete
+
+# Autosuggest
+zsh-users/zsh-autosuggestions
+
+# Completions
+zsh-users/zsh-completions
+
+# Syntax Highlight
+zdharma-continuum/fast-syntax-highlighting kind:defer
+
+# History Substring Search
+zsh-users/zsh-history-substring-search
+
+# OhMyZSH Plugin Git
+robbyrussell/oh-my-zsh path:plugins/git
+
+# Atuin Shell History
+atuinsh/atuin

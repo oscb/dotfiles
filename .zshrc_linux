@@ -1,9 +1,12 @@
+# Antidote
+source "${ZDOTDIR:-~}/.antidote/antidote.zsh"
+antidote load
+
 # Path (Do before zoxide, as it gets installed into this path)
 export PATH="$HOME/.local/bin:$PATH"
 
 # Zoxide autocomplete
-eval "$(zoxide init zsh --no-cmd)"
-alias z=__zoxide_z
+eval "$(zoxide init zsh)"
 
 # Init the Completion System
 autoload -U compinit && compinit -i

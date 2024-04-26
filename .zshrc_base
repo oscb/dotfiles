@@ -1,42 +1,3 @@
-# ZINIT
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
-
-# If zinit starts after compinit
-# autoload -Uz _zinit
-# (( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Dracula theme
-zinit ice as"theme"
-zinit light dracula/zsh
-
-# Autocomplete
-zinit light marlonrichert/zsh-autocomplete
-
-# Autosuggest
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-zinit ice wait="0a" lucid atload="_zsh_autosuggest_start"
-zinit light zsh-users/zsh-autosuggestions
-
-# Completions
-zinit ice wait="0b" lucid blockf
-zinit light zsh-users/zsh-completions
-
-# Syntax Highlight
-zinit ice wait="0c" lucid atinit="zpcompinit;zpcdreplay"
-zinit light zdharma-continuum/fast-syntax-highlighting
-
-# History Substring Search
-zinit light zsh-users/zsh-history-substring-search
-
-# OhMyZSH Plugin Git
-zinit snippet OMZP::git
-
-# Atuin Shell History
-zinit load atuinsh/atuin
-
 # Alias for git
 alias gith="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
 
@@ -55,6 +16,9 @@ export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 # Oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.omp.json)"
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
 
 # Fzf Catpuccin mocha
 export FZF_DEFAULT_OPTS=" \
