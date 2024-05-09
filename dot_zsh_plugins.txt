@@ -6,7 +6,6 @@ ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 ohmyzsh/ohmyzsh path:plugins/magic-enter
 
-
 # popular fish-like plugins
 mattmc3/zfunctions
 zsh-users/zsh-history-substring-search
