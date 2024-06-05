@@ -22,15 +22,10 @@
 
 [tools]
 node = '20.7.0'
-ruby = '3.3.0'
-kotlin = '1.8.0'
-python = "latest"
-flutter = "latest"
-cocoapods = "latest"
+python = '3.11.2'
 go = "latest"
 bun = "latest"
 deno = "latest"
-rust = "latest"
 
 # terraform = '1.0.0'       # specify a single version
 # erlang = '26'             # specify a major version only

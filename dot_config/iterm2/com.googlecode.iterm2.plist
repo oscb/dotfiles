@@ -8826,8 +8826,6 @@
 	<integer>5</integer>
 	<key>ThreeFingerEmulates</key>
 	<true/>
-	<key>TimeBetweenTips</key>
-	<real>86400</real>
 	<key>TmuxUsesDedicatedProfile</key>
 	<false/>
 	<key>TmuxWindowsShouldCloseAfterDetach</key>
