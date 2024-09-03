@@ -1,5 +1,5 @@
 # Antidote
-source "${ZDOTDIR:-~}/.antidote/antidote.zsh"
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
 # Path (Do before zoxide, as it gets installed into this path)
