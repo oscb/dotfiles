@@ -46,31 +46,23 @@
   # Mise
   {{ if not lookPath "mise" }}
   {{if eq .chezmoi.arch "arm64" }}
-  apt update -y && apt install -y gpg sudo wget curl
+  type -p curl >/dev/null || (apt update -y && apt install -y gpg sudo wget curl)
   sudo install -dm 755 /etc/apt/keyrings
   wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/mise-archive-keyring.gpg 1> /dev/null
   echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=arm64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
-  sudo apt update
-  sudo apt install -y mise
   {{else}}
   sudo install -dm 755 /etc/apt/keyrings
   wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/mise-archive-keyring.gpg 1> /dev/null
   echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
-  sudo apt update
-  sudo apt install -y mise
-  mise install
   {{end}}
   {{end}}
 
   # Install GH CLI
   {{ if not lookPath "gh" }}
-  echo "Installing Github CLI"
   type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
   curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
   && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-  && sudo apt update \
-  && sudo apt install gh -y
+  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
   {{ end }}
 
   # VSCode
@@ -81,13 +73,29 @@
   sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
   rm -f packages.microsoft.gpg
   sudo apt install apt-transport-https
-  sudo apt update
-  sudo apt install code
   {{ end }}
 
   # Zellij
   {{ if not lookPath "zellij" }}
   cargo install --locked zellij
+  {{ end }}
+
+  #
+  # Installation Steps
+  #
+  sudo apt update
+  {{ if not lookPath "code" }}
+  sudo apt install code
+  {{ end }}
+
+  {{ if not lookPath "gh" }}
+  sudo apt install gh -y
+  {{ end }}
+
+  {{ if not lookPath "mise" }}
+  sudo apt update
+  sudo apt install -y mise
+  mise install
   {{ end }}
   
   {{ end }}
