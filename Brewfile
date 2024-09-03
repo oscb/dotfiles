@@ -226,8 +226,6 @@ mas "Darkroom", id: 953286746
 mas "Deliveries", id: 290986013
 mas "Developer", id: 640199958
 mas "Dropover", id: 1355679052
-mas "Fiery Feeds", id: 1158763303
-mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "GoodLinks", id: 1474335294
 mas "Goodnotes", id: 1444383602
@@ -261,8 +259,6 @@ mas "Poolsuite FM", id: 1514817810
 mas "Rakuten Cash Back", id: 1451893560
 mas "Reeder", id: 1529448980
 mas "Refined GitHub", id: 1519867270
-mas "Save to Matter", id: 1548677272
-mas "Slack", id: 803453959
 mas "Steam Link", id: 1246969117
 mas "Streaks", id: 963034692
 mas "Structured", id: 1499198946

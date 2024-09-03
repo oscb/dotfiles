@@ -38,22 +38,21 @@
   curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 
   # Mise
-  {if eq .chezmoi.arch "arm64" }
+  {{if eq .chezmoi.arch "arm64" }}
   apt update -y && apt install -y gpg sudo wget curl
   sudo install -dm 755 /etc/apt/keyrings
   wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/mise-archive-keyring.gpg 1> /dev/null
   echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=arm64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
   sudo apt update
   sudo apt install -y mise
-  {else}
+  {{else}}
   sudo install -dm 755 /etc/apt/keyrings
   wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/mise-archive-keyring.gpg 1> /dev/null
   echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
   sudo apt update
   sudo apt install -y mise
   mise install
-  { end }
-
+  {{end}}
 
   # Install GH CLI
   echo "Installing Github CLI"
@@ -76,8 +75,6 @@
 
   # Zellij
   cargo install --locked zellij
-
-  # 1Password 
   
-  {{   end }}
+  {{ end }}
 {{ end }}
