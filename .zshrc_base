@@ -18,7 +18,7 @@ export PATH="$HOME/.local/share/mise/shims:$PATH"
 eval "$(oh-my-posh init zsh --config ~/.omp.json)"
 
 # Set up fzf key bindings and fuzzy completion
-eval "$(fzf)"
+source <(fzf --zsh)
 
 # Fzf Catpuccin mocha
 export FZF_DEFAULT_OPTS=" \
