@@ -21,11 +21,12 @@
 #
 
 [tools]
-node = '20.7.0'
-python = '3.11.2'
+node = "latest"
+python = "latest"
 go = "latest"
 bun = "latest"
 deno = "latest"
+rust = "latest"
 
 # terraform = '1.0.0'       # specify a single version
 # erlang = '26'             # specify a major version only
