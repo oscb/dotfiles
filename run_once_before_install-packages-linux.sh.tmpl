@@ -29,22 +29,22 @@
   chsh -s /bin/zsh
 
   # Antidote
-  {{ if not (lookPath "antidote") }}
+  {{ if eq (lookPath "antidote") "" }}
   git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
   {{ end }}
 
   # zoxide
-  {{ if not (lookPath "z") }}
+  {{ if eq (lookPath "z") "" }}
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   {{ end }}
 
   # Oh my Posh
-  {{ if not (lookPath "oh-my-posh") }}
+  {{ if eq (lookPath "oh-my-posh") "" }}
   curl -s https://ohmyposh.dev/install.sh | sudo bash -s
   {{ end }}
 
   # Mise
-  {{ if not (lookPath "mise") }}
+  {{ if eq (lookPath "mise") "" }}
   {{if eq .chezmoi.arch "arm64" }}
   type -p curl >/dev/null || (apt update -y && apt install -y gpg sudo wget curl)
   sudo install -dm 755 /etc/apt/keyrings
@@ -58,7 +58,7 @@
   {{end}}
 
   # Install GH CLI
-  {{ if not (lookPath "gh") }}
+  {{ if eq (lookPath "gh") "" }}
   type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
   curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
   && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -66,7 +66,7 @@
   {{ end }}
 
   # VSCode
-  {{ if not (lookPath "code") }}
+  {{ if eq (lookPath "code") "" }}
   sudo apt-get install wget gpg
   wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
   sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
@@ -76,7 +76,7 @@
   {{ end }}
 
   # Zellij
-  {{ if not (lookPath "zellij") }}
+  {{ if eq (lookPath "zellij") "" }}
   cargo install --locked zellij
   {{ end }}
 
@@ -84,15 +84,15 @@
   # Installation Steps
   #
   sudo apt update
-  {{ if not (lookPath "code") }}
+  {{ if eq (lookPath "code") "" }}
   sudo apt install code
   {{ end }}
 
-  {{ if not (lookPath "gh") }}
+  {{ if eq (lookPath "gh") "" }}
   sudo apt install gh -y
   {{ end }}
 
-  {{ if not (lookPath "mise") }}
+  {{ if eq (lookPath "mise") "" }}
   sudo apt update
   sudo apt install -y mise
   mise install
