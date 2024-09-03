@@ -40,6 +40,11 @@ autoload -Uz compinit && compinit -i
 source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
 antidote load
 
+# Carapace autocomplete
+export CARAPACE_BRIDGES='zsh,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
+
 # Utils
 
 # Dumps all the Homebrew packages
