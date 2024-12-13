@@ -16,3 +16,7 @@ winget.json
 .zshrc
 .tmux.conf
 {{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+Brewfile-linux
+{{ end }}

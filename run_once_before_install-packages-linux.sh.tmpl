@@ -80,6 +80,16 @@
   cargo install --locked zellij
   {{ end }}
 
+  # Atuin
+  {{ if eq (lookPath "atuin") "" }}
+  	curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+  {{ end }}
+
+  # Homebrew for Linux
+  {{ if eq (lookPath "brew") "" }}
+  	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  {{ end }}
+
   #
   # Installation Steps
   #

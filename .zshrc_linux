@@ -8,5 +8,16 @@ export PATH="$HOME/.local/bin:$PATH"
 # Zoxide autocomplete
 eval "$(zoxide init zsh)"
 
-# Init the Completion System
-autoload -U compinit && compinit -i
+# Init the Completion System and add HomeBrew to FPath
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+autoload -Uz compinit && compinit -i
+
+# Atuin
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
+# Homebrew for Linux
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
