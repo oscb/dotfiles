@@ -18,6 +18,3 @@ autoload -Uz compinit && compinit -i
 # Atuin
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
-
-# Homebrew for Linux
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

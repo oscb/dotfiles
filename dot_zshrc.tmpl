@@ -1,4 +1,11 @@
+{{- if eq .chezmoi.os "linux" -}}
+# Homebrew for Linux
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{- end -}}
+
+
 {{-   include ".zshrc_base" -}}
+
 {{- if eq .chezmoi.os "darwin" -}}
 {{-   include ".zshrc_mac" -}}
 {{- else if eq .chezmoi.os "linux" -}}
