@@ -1,6 +1,7 @@
 tap "1password/tap"
 tap "achannarasappa/tap"
 tap "adoptopenjdk/openjdk"
+tap "archivebox/archivebox"
 tap "artginzburg/tap"
 tap "blacktop/tap"
 tap "homebrew/bundle"
@@ -14,6 +15,7 @@ tap "mas-cli/tap"
 tap "microsoft/git"
 tap "osx-cross/arm"
 tap "osx-cross/avr"
+tap "pebble/pebble-sdk"
 tap "qmk/qmk"
 tap "robotsandpencils/made"
 tap "rsteube/tap"
@@ -21,17 +23,17 @@ tap "tarkah/tickrs"
 tap "wix/brew"
 tap "xcodesorg/made"
 brew "antidote"
+brew "apprise"
 brew "aria2"
 brew "atuin"
 brew "libusb"
 brew "libusb-compat"
 brew "bat"
 brew "btop"
+brew "caddy"
 brew "cheat"
 brew "chezmoi"
 brew "cocoapods"
-brew "gnutls"
-brew "qemu"
 brew "lima"
 brew "colima"
 brew "deno"
@@ -48,7 +50,9 @@ brew "edencommon"
 brew "exiftool"
 brew "ext4fuse"
 brew "eza"
+brew "f3"
 brew "fd"
+brew "gnutls"
 brew "libmicrohttpd"
 brew "sdl2"
 brew "ffmpeg"
@@ -59,11 +63,14 @@ brew "gh"
 brew "git"
 brew "gitui"
 brew "gnupg"
+brew "pkgconf"
+brew "icu4c@76"
 brew "smartmontools"
 brew "gsmartcontrol"
 brew "gstreamer"
 brew "htop"
 brew "httpie"
+brew "humanlog"
 brew "ios-deploy"
 brew "iperf"
 brew "jless"
@@ -76,14 +83,15 @@ brew "mosh"
 brew "mtr"
 brew "ncdu"
 brew "nushell"
-brew "ollama", restart_service: true
+brew "ollama", restart_service: :changed
 brew "p7zip"
 brew "pandoc"
 brew "pgcli"
-brew "tcl-tk"
 brew "python-tk@3.11"
 brew "python@3.10"
+brew "qemu"
 brew "rclone"
+brew "rom-tools"
 brew "sampler"
 brew "sd"
 brew "semgrep"
@@ -93,6 +101,7 @@ brew "superfile"
 brew "swift-format"
 brew "swiftlint"
 brew "tailscale"
+brew "tcl-tk"
 brew "telnet"
 brew "tiger-vnc"
 brew "tldr"
@@ -116,7 +125,6 @@ brew "zsh"
 brew "achannarasappa/tap/ticker"
 brew "artginzburg/tap/sudo-touchid"
 brew "blacktop/tap/ipsw"
-brew "humanlogio/tap/humanlog"
 brew "jakehilborn/jakehilborn/displayplacer"
 brew "jandedobbeleer/oh-my-posh/oh-my-posh"
 brew "mas-cli/tap/mas"
@@ -136,6 +144,8 @@ cask "beeper"
 cask "blender"
 cask "calibre"
 cask "cheatsheet"
+cask "claude"
+cask "cursor"
 cask "cyberduck"
 cask "darktable"
 cask "detox-instruments"
@@ -150,8 +160,10 @@ cask "font-monaspace"
 cask "font-monaspace-nerd-font"
 cask "gb-studio"
 cask "github"
+cask "github-copilot-for-xcode"
 cask "godot"
 cask "google-chrome"
+cask "gstreamer-runtime"
 cask "hiddenbar"
 cask "iina"
 cask "insomnia"
@@ -160,6 +172,8 @@ cask "isimulator"
 cask "itch"
 cask "iterm2"
 cask "lm-studio"
+cask "love"
+cask "lunasea"
 cask "macfuse"
 cask "mdimagesizemdimporter"
 cask "messenger"
@@ -204,72 +218,89 @@ cask "vlc"
 cask "vox"
 cask "warp"
 cask "whisky"
+cask "wine-stable"
 cask "wireshark"
 cask "wwdc"
 cask "xcodes"
 cask "xscope"
+cask "yaak"
 cask "yattee"
 cask "yubico-yubikey-manager"
 cask "zoom"
 cask "zulu@11"
-mas "1Blocker", id: 1365531024
 mas "1Password for Safari", id: 1569813296
 mas "Actions", id: 1586435171
-mas "AdGuard Home", id: 1543143740
+mas "AdGuard for Safari", id: 1440147259
+mas "AdGuardHome", id: 1543143740
+mas "AppDab", id: 1612325183
 mas "Bakery", id: 1575220747
 mas "CardPointers", id: 1472875808
 mas "Color Picker", id: 1545870783
+mas "ColorSlurp", id: 1287239339
 mas "Craft", id: 1487937127
 mas "Dark Noise", id: 1465439395
 mas "Dark Reader for Safari", id: 1438243180
 mas "Darkroom", id: 953286746
+mas "Data Jar", id: 1453273600
 mas "Deliveries", id: 290986013
+mas "DevCodePurge", id: 0
 mas "Developer", id: 640199958
 mas "Dropover", id: 1355679052
+mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "GoodLinks", id: 1474335294
 mas "Goodnotes", id: 1444383602
 mas "HACK", id: 1464477788
+mas "Helm", id: 6479357934
 mas "Home Assistant", id: 1099568401
 mas "Hush", id: 1544743900
 mas "iMovie", id: 408981434
 mas "Infuse", id: 1136220934
 mas "Ivory", id: 6444602274
 mas "Jayson", id: 1468691718
-mas "Judo", id: 1564578427
 mas "Keepa - Price Tracker", id: 1533805339
 mas "Keynote", id: 409183694
+mas "Manet", id: 0
 mas "Mela", id: 1568924476
 mas "Microsoft Remote Desktop", id: 1295203466
+mas "My Links", id: 6504573402
 mas "Noir", id: 1592917505
 mas "Notability", id: 360593530
+mas "NotePlan Beta", id: 0
 mas "Numbers", id: 409203825
-mas "Okta Extension App", id: 1439967473
 mas "One Thing", id: 1604176982
+mas "OptiCull", id: 6448657895
 mas "Pages", id: 409201541
+mas "Paletter", id: 1556798345
 mas "Pandan", id: 1569600264
-mas "Pasteboard", id: 1499215709
+mas "Paperparrot", id: 1663665267
+mas "Pasteboard Viewer", id: 1499215709
 mas "Pastel", id: 413897608
 mas "Photomator", id: 1444636541
+mas "Picasso", id: 6472062986
 mas "PiPifier", id: 1160374471
 mas "Pixelmator Pro", id: 1289583905
 mas "Plash", id: 1494023538
-mas "Playgrounds", id: 1496833156
 mas "Poolsuite FM", id: 1514817810
 mas "Rakuten Cash Back", id: 1451893560
 mas "Reeder", id: 1529448980
+mas "Reeder", id: 6475002485
 mas "Refined GitHub", id: 1519867270
+mas "Sink It", id: 6449873635
+mas "Slack", id: 803453959
 mas "Steam Link", id: 1246969117
 mas "Streaks", id: 963034692
 mas "Structured", id: 1499198946
+mas "Swift Playground", id: 1496833156
 mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "Transporter", id: 1450874784
-mas "Userscripts-Mac-App", id: 1463298887
+mas "Userscripts", id: 1463298887
+mas "WhatsApp", id: 310633997
 mas "WiFi Explorer", id: 494803304
 mas "WireGuard", id: 1451685025
-mas "‎WhatsApp", id: 310633997
+mas "Yomu", id: 562211012
 vscode "1password.op-vscode"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
@@ -281,13 +312,13 @@ vscode "christian-kohler.npm-intellisense"
 vscode "christian-kohler.path-intellisense"
 vscode "ciantic.keymapceditor-vsc"
 vscode "codezombiech.gitignore"
-vscode "continue.continue"
 vscode "cschlosser.doxdocgen"
 vscode "dart-code.dart-code"
 vscode "dart-code.flutter"
 vscode "davidanson.vscode-markdownlint"
 vscode "dbaeumer.vscode-eslint"
 vscode "denoland.vscode-deno"
+vscode "docker.docker"
 vscode "donjayamanne.githistory"
 vscode "eamodio.gitlens"
 vscode "enkia.tokyo-night"
@@ -302,12 +333,14 @@ vscode "github.copilot-chat"
 vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
 vscode "golang.go"
+vscode "google.geminicodeassist"
 vscode "gruntfuggly.todo-tree"
 vscode "johnpapa.vscode-peacock"
 vscode "josetr.cmake-language-support-vscode"
 vscode "joshbolduc.commitlint"
 vscode "kisstkondoros.vscode-gutter-preview"
 vscode "leizongmin.node-module-intellisense"
+vscode "llvm-vs-code-extensions.lldb-dap"
 vscode "me-dutour-mathieu.vscode-github-actions"
 vscode "mechatroner.rainbow-csv"
 vscode "miguelsolorio.fluent-icons"
@@ -352,9 +385,9 @@ vscode "redhat.java"
 vscode "redhat.vscode-xml"
 vscode "redhat.vscode-yaml"
 vscode "rust-lang.rust-analyzer"
-vscode "sswg.swift-lang"
 vscode "stringham.move-ts"
 vscode "sweetpad.sweetpad"
+vscode "swiftlang.swift-vscode"
 vscode "tamasfe.even-better-toml"
 vscode "tomoyukim.vscode-mermaid-editor"
 vscode "twxs.cmake"
@@ -362,7 +395,6 @@ vscode "unifiedjs.vscode-mdx"
 vscode "vadimcn.vscode-lldb"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"
 vscode "visualstudioexptteam.vscodeintellicode"
-vscode "vsciot-vscode.vscode-arduino"
 vscode "vscjava.vscode-gradle"
 vscode "vscjava.vscode-java-debug"
 vscode "vscjava.vscode-java-dependency"

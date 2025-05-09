@@ -27,6 +27,7 @@ go = "latest"
 bun = "latest"
 deno = "latest"
 rust = "latest"
+lua = "latest"
 
 # terraform = '1.0.0'       # specify a single version
 # erlang = '26'             # specify a major version only
