@@ -1,18 +1,9 @@
 # Alias for git
 alias gith="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
 
-# Text Editor
-export MICRO_TRUECOLOR=1
-export EDITOR=micro
-export VISUAL="code --wait"
-
-# User
-export PATH=$PATH:$HOME/bin
 
 # Mise (replacing ASDF)
 eval "$(mise activate zsh)"
-# Add Mise to path for Editors
-export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 # Oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.omp.json)"
@@ -20,14 +11,27 @@ eval "$(oh-my-posh init zsh --config ~/.omp.json)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-# Fzf Catpuccin mocha
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
 # GitUI With Mocha theme
 alias gitui="gitui -t catpuccin-mocha.ron"
 
 # Start zellij automatically
 # eval "$(zellij setup --generate-auto-start zsh)"
+
+# Init the Completion System and add HomeBrew to FPath
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+autoload -Uz compinit && compinit -i
+
+# Antidote
+source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+antidote load
+
+# Zoxide autocomplete
+eval "$(zoxide init zsh)"
+
+# Atuin
+# . "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+

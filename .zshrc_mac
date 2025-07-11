@@ -1,44 +1,6 @@
-# Zoxide autocomplete
-eval "$(zoxide init zsh)"
-
-# Homebrew
-export BREW_DIR=$(brew --prefix)
-
-# React Debugger
-export REACT_EDITOR="code --wait"
-
-# Swift
-export TOOLCHAINS=swift
-
-# Android
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# Flutter
-export PATH=$PATH:$HOME/.pub-cache/bin
-
-# Go
-export GOPATH=$HOME/Projects/Go
-
 # iTerm integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
   export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
-
-# Init the Completion System and add HomeBrew to FPath
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-fi
-autoload -Uz compinit && compinit -i
-
-# Antidote
-source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
-antidote load
 
 # Carapace autocomplete
 export CARAPACE_BRIDGES='zsh,bash,inshellisense' # optional

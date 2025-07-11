@@ -13,13 +13,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- end -}}
 {{-   include ".zshrc_base_post" -}}
 
-{{ if eq .chezmoi.hostname "infinity" }}
-# Custom NAS                                                                                      
-export HDD=/srv/dev-disk-by-uuid-8b40a0e9-588d-46cd-ba52-a863e550a94b
-export RAID=/srv/dev-disk-by-id-md-name-infinity-0
-export APPDATA=/data/docker/appdata 
-{{ end }}
-
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 # WSL-specific code

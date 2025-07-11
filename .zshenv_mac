@@ -1,0 +1,20 @@
+# React Debugger
+export REACT_EDITOR="code --wait"
+
+# Swift
+export TOOLCHAINS=swift
+
+# Android
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Go
+export GOPATH=$HOME/Projects/Go
+
+# Flutter
+export PATH=$PATH:$HOME/.pub-cache/bin
