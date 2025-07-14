@@ -27,85 +27,23 @@ sudo apt install \
 sudo apt install zsh
 chsh -s /bin/zsh
 
-  # Antidote
-  {{ if eq (lookPath "antidote") "" }}
-  git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
-  {{ end }}
-
-  # zoxide
-  {{ if eq (lookPath "z") "" }}
-  curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-  {{ end }}
-
-  # Oh my Posh
-  {{ if eq (lookPath "oh-my-posh") "" }}
-  curl -s https://ohmyposh.dev/install.sh | sudo bash -s
-  {{ end }}
-
-  # Mise
-  {{ if eq (lookPath "mise") "" }}
-  {{if eq .chezmoi.arch "arm64" }}
-  type -p curl >/dev/null || (apt update -y && apt install -y gpg sudo wget curl)
-  sudo install -dm 755 /etc/apt/keyrings
-  wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/mise-archive-keyring.gpg 1> /dev/null
-  echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=arm64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
-  {{else}}
-  sudo install -dm 755 /etc/apt/keyrings
-  wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/mise-archive-keyring.gpg 1> /dev/null
-  echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
-  {{end}}
-  {{end}}
-
-  # Install GH CLI
-  {{ if eq (lookPath "gh") "" }}
-  type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
-  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-  && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-  {{ end }}
-
-  # VSCode
-  {{ if eq (lookPath "code") "" }}
-  sudo apt-get install wget gpg
-  wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-  sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-  sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-  rm -f packages.microsoft.gpg
-  sudo apt install apt-transport-https
-  {{ end }}
-
-  # Zellij
-  {{ if eq (lookPath "zellij") "" }}
-  cargo install --locked zellij
-  {{ end }}
-
-  # Atuin
-  {{ if eq (lookPath "atuin") "" }}
-  	curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-  {{ end }}
-
-  # Homebrew for Linux
-  {{ if eq (lookPath "brew") "" }}
-  	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  {{ end }}
-
-  #
-  # Installation Steps
-  #
-  sudo apt update
-  {{ if eq (lookPath "code") "" }}
-  sudo apt install code
-  {{ end }}
-
-  {{ if eq (lookPath "gh") "" }}
-  sudo apt install gh -y
-  {{ end }}
-
-  {{ if eq (lookPath "mise") "" }}
-  sudo apt update
-  sudo apt install -y mise
-  mise install
-  {{ end }}
-  
-  {{ end }}
+# VSCode
+{{ if eq (lookPath "code") "" }}
+sudo apt-get install wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+sudo apt install apt-transport-https
 {{ end }}
+
+#
+# Installation Steps
+#
+sudo apt update
+{{ if eq (lookPath "code") "" }}
+sudo apt install code
+{{ end }}
+
+{{ end }} # debian/ubuntu
+{{ end }} # linux
