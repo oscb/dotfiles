@@ -29,7 +29,7 @@ source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
 antidote load
 
 # Zoxide autocomplete
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 # Atuin
 # . "$HOME/.atuin/bin/env"
