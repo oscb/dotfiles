@@ -1,9 +1,9 @@
-{{-   include ".zshenv_base" -}}
+{{include ".zshenv_base"}}
 
 {{- if eq .chezmoi.os "darwin" -}}
-{{-   include ".zshenv_mac" -}}
+{{    include ".zshenv_mac" }}
 {{- else if eq .chezmoi.os "linux" -}}
-{{-   include ".zshenv_linux" -}}
+{{    include ".zshenv_linux" }}
 {{- end -}}
 
 {{ if eq .chezmoi.hostname "infinity" }}
