@@ -3,6 +3,7 @@
 {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") -}}
 
 # Debian-specific code
+sudo apt update
 
 # Required tools for Python Install
 sudo apt install \
