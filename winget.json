@@ -1,43 +1,136 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-04-20T10:41:05.925-00:00",
+	"CreationDate" : "2025-12-06T23:09:29.042-00:00",
 	"Sources" : 
 	[
 		{
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "Readdle.Spark"
-				},
-				{
-					"PackageIdentifier" : "AgileBits.1Password"
-				},
-				{
-					"PackageIdentifier" : "NexusMods.Vortex"
-				},
-				{
-					"PackageIdentifier" : "7zip.7zip"
-				},
-				{
-					"PackageIdentifier" : "Canonical.Ubuntu.2204"
-				},
-				{
-					"PackageIdentifier" : "Discord.Discord"
-				},
-				{
-					"PackageIdentifier" : "Mozilla.Firefox.DeveloperEdition"
+					"PackageIdentifier" : "ClassicOldSong.Apollo"
 				},
 				{
 					"PackageIdentifier" : "Git.Git"
 				},
 				{
-					"PackageIdentifier" : "Catacombae.HFSExplorer"
+					"PackageIdentifier" : "BlenderFoundation.Blender"
+				},
+				{
+					"PackageIdentifier" : "Google.Chrome"
+				},
+				{
+					"PackageIdentifier" : "GitHub.cli"
+				},
+				{
+					"PackageIdentifier" : "ViGEm.ViGEmBus"
+				},
+				{
+					"PackageIdentifier" : "AgileBits.1Password"
+				},
+				{
+					"PackageIdentifier" : "Nvidia.PhysX"
+				},
+				{
+					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell"
+				},
+				{
+					"PackageIdentifier" : "Guru3D.Afterburner"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.Edge"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.EdgeWebView2Runtime"
+					"PackageIdentifier" : "Guru3D.RTSS"
+				},
+				{
+					"PackageIdentifier" : "Valve.Steam"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+				},
+				{
+					"PackageIdentifier" : "QL-Win.QuickLook"
+				},
+				{
+					"PackageIdentifier" : "GlavSoft.TightVNC"
+				},
+				{
+					"PackageIdentifier" : "ForceAutoHDR.7gxycn08"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
+					"PackageIdentifier" : "SteamGridDB.RomManager"
+				},
+				{
+					"PackageIdentifier" : "AgileBits.1Password.CLI"
+				},
+				{
+					"PackageIdentifier" : "Anthropic.ClaudeCode"
+				},
+				{
+					"PackageIdentifier" : "Anthropic.Claude"
+				},
+				{
+					"PackageIdentifier" : "DevToys-app.DevToys"
+				},
+				{
+					"PackageIdentifier" : "Discord.Discord"
+				},
+				{
+					"PackageIdentifier" : "GitHub.Copilot"
+				},
+				{
+					"PackageIdentifier" : "GitHub.GitHubDesktop"
+				},
+				{
+					"PackageIdentifier" : "OO-Software.ShutUp10"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.OneDrive"
+				},
+				{
+					"PackageIdentifier" : "Vivaldi.Vivaldi"
+				},
+				{
+					"PackageIdentifier" : "Obsidian.Obsidian"
+				},
+				{
+					"PackageIdentifier" : "LukiLabs.Craft"
+				},
+				{
+					"PackageIdentifier" : "ItchIo.Itch"
+				},
+				{
+					"PackageIdentifier" : "twpayne.chezmoi"
+				},
+				{
+					"PackageIdentifier" : "LocalSend.LocalSend"
+				},
+				{
+					"PackageIdentifier" : "Ollama.Ollama"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VisualStudioCode"
+				},
+				{
+					"PackageIdentifier" : "CiderCollective.Cider"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier" : "15722UsefulApp.WorkspaceLauncherForVSCode"
+				},
+				{
+					"PackageIdentifier" : "FilesCommunity.Files"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.AppInstaller"
@@ -52,160 +145,13 @@
 					"PackageIdentifier" : "Microsoft.VCLibs.Desktop.14"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DevHome"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.WindowsTerminal"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.Teams.Free"
-				},
-				{
-					"PackageIdentifier" : "Meta.Oculus"
+					"PackageIdentifier" : "jdalley.ToggleHDRforCommandPalette"
 				},
 				{
 					"PackageIdentifier" : "JanDeDobbeleer.OhMyPosh"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.OneDrive"
-				},
-				{
-					"PackageIdentifier" : "Guru3D.RTSS"
-				},
-				{
-					"PackageIdentifier" : "Rclone.Rclone"
-				},
-				{
-					"PackageIdentifier" : "Rufus.Rufus"
-				},
-				{
-					"PackageIdentifier" : "Valve.Steam"
-				},
-				{
-					"PackageIdentifier" : "LizardByte.Sunshine"
-				},
-				{
-					"PackageIdentifier" : "eliboa.TegraRcmGUI"
-				},
-				{
-					"PackageIdentifier" : "TheBrowserCompany.Arc"
-				},
-				{
-					"PackageIdentifier" : "Ubisoft.Connect"
-				},
-				{
-					"PackageIdentifier" : "WinDirStat.WinDirStat"
-				},
-				{
-					"PackageIdentifier" : "SteamGridDB.RomManager"
-				},
-				{
-					"PackageIdentifier" : "Obsidian.Obsidian"
-				},
-				{
-					"PackageIdentifier" : "ItchIo.Itch"
-				},
-				{
-					"PackageIdentifier" : "twpayne.chezmoi"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
-				},
-				{
-					"PackageIdentifier" : "Appest.TickTick"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
-				},
-				{
-					"PackageIdentifier" : "EclipseAdoptium.Temurin.17.JDK"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
-				},
-				{
-					"PackageIdentifier" : "Amazon.Games"
-				},
-				{
-					"PackageIdentifier" : "Logitech.GHUB"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
-				},
-				{
-					"PackageIdentifier" : "GitHub.cli"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
-				},
-				{
-					"PackageIdentifier" : "GOG.Galaxy"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VisualStudioCode"
-				},
-				{
-					"PackageIdentifier" : "Apple.iTunes"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.WindowsPCHealthCheck"
-				},
-				{
-					"PackageIdentifier" : "Transmission.Transmission"
-				},
-				{
-					"PackageIdentifier" : "TechPowerUp.GPU-Z"
-				},
-				{
-					"PackageIdentifier" : "VideoLAN.VLC"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
-				},
-				{
-					"PackageIdentifier" : "ViGEm.ViGEmBus"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
-				},
-				{
-					"PackageIdentifier" : "Nvidia.PhysX"
-				},
-				{
-					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
-				},
-				{
-					"PackageIdentifier" : "SteamGridDB.RomManager"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
-				},
-				{
-					"PackageIdentifier" : "ElectronicArts.EADesktop"
-				},
-				{
-					"PackageIdentifier" : "SyncTrayzor.SyncTrayzor"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
 				}
 			],
 			"SourceDetails" : 
@@ -215,7 +161,25 @@
 				"Name" : "winget",
 				"Type" : "Microsoft.PreIndexed.Package"
 			}
+		},
+		{
+			"Packages" : 
+			[
+				{
+					"PackageIdentifier" : "9P8LTPGCBZXD"
+				},
+				{
+					"PackageIdentifier" : "9PFXXSHC64H3"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+				"Identifier" : "StoreEdgeFD",
+				"Name" : "msstore",
+				"Type" : "Microsoft.Rest"
+			}
 		}
 	],
-	"WinGetVersion" : "1.7.10861"
+	"WinGetVersion" : "1.12.350"
 }
