@@ -5,26 +5,6 @@
 # Debian-specific code
 sudo apt update
 
-# Required tools for Python Install
-sudo apt install \
-  build-essential \
-  curl \
-  libbz2-dev \
-  libffi-dev \
-  liblzma-dev \
-  libncursesw5-dev \
-  libreadline-dev \
-  libsqlite3-dev \
-  libssl-dev \
-  libxml2-dev \
-  libxmlsec1-dev \
-  llvm \
-  make \
-  tk-dev \
-  wget \
-  xz-utils \
-  zlib1g-dev
-
 # ZSH
 sudo apt install zsh
 chsh -s /bin/zsh
@@ -48,4 +28,36 @@ sudo apt install code
 {{ end -}}
 
 {{ end -}} # debian/ubuntu
+
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+
+# Arch Linux-specific code
+sudo pacman -Syu --noconfirm
+
+# ZSH
+sudo pacman -S --needed --noconfirm zsh
+chsh -s /usr/bin/zsh
+
+# Install AUR helper (paru or yay) if not present
+{{ if and (eq (lookPath "paru") "") (eq (lookPath "yay") "") }}
+echo "Installing yay AUR helper..."
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd ~
+rm -rf /tmp/yay
+{{ end }}
+
+# VSCode
+{{ if eq (lookPath "code") "" }}
+{{ if ne (lookPath "paru") "" -}}
+paru -S --needed --noconfirm visual-studio-code-bin
+{{ else -}}
+yay -S --needed --noconfirm visual-studio-code-bin
+{{ end -}}
+{{ end }}
+
+{{ end -}} # arch
+
 {{ end -}} # linux

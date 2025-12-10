@@ -1,0 +1,9 @@
+# Arch Linux AUR packages
+# Generated with: pacman -Qqem
+# To regenerate: pacman -Qqem > Archfile.aur
+oh-my-posh-bin
+tickrs
+superfile-bin
+ugit
+humanlog-bin
+mise-bin

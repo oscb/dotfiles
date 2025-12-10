@@ -1,0 +1,41 @@
+{{if eq .chezmoi.osRelease.id "arch" -}}
+#!/bin/bash
+
+# Update package database
+sudo pacman -Sy --noconfirm
+
+# Install official packages from Archfile
+echo "Installing official packages from Archfile..."
+grep -v '^#' "{{ .chezmoi.sourceDir }}/Archfile" | grep -v '^[[:space:]]*$' | \
+  xargs -r sudo pacman -S --needed --noconfirm || true
+
+# Check if Archfile.aur exists and has packages
+if [ -f "{{ .chezmoi.sourceDir }}/Archfile.aur" ]; then
+  AUR_PKGS=$(grep -v '^#' "{{ .chezmoi.sourceDir }}/Archfile.aur" | grep -v '^[[:space:]]*$')
+  
+  if [ -n "$AUR_PKGS" ]; then
+    # Install AUR helper (paru or yay) if not present
+    if ! command -v paru &> /dev/null && ! command -v yay &> /dev/null; then
+      echo "Installing yay AUR helper..."
+      cd /tmp
+      git clone https://aur.archlinux.org/yay.git
+      cd yay
+      makepkg -si --noconfirm
+      cd ~
+      rm -rf /tmp/yay
+    fi
+
+    # Determine which AUR helper to use
+    if command -v paru &> /dev/null; then
+      AUR_HELPER="paru"
+    else
+      AUR_HELPER="yay"
+    fi
+
+    # Install AUR packages
+    echo "Installing AUR packages from Archfile.aur..."
+    echo "$AUR_PKGS" | xargs -r $AUR_HELPER -S --needed --noconfirm || true
+  fi
+fi
+
+{{ end -}}

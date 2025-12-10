@@ -1,0 +1,42 @@
+# Arch Linux official packages
+# Generated with: pacman -Qqen
+# To regenerate: pacman -Qqen > Archfile
+antidote
+aria2
+atuin
+bat
+btop
+chezmoi
+difftastic
+bind
+dust
+eza
+fd
+fzf
+github-cli
+git
+gitui
+htop
+httpie
+jq
+micro
+miller
+mosh
+nushell
+ollama
+pandoc
+pgcli
+rclone
+sampler
+sd
+semgrep
+p7zip
+tldr
+ugrep
+watchman
+yq
+yt-dlp
+zellij
+zinit
+zoxide
+zsh
