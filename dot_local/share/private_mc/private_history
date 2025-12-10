@@ -1,0 +1,17 @@
+[cmdline]
+0=q
+1=m10
+2=10
+3=
+
+[Dir Hist New Right Panel]
+0=/Users/oscb
+1=/Users/oscb/.local/share
+2=/Users/oscb/.local/share/mc/skins
+3=/Users/oscb/.local/share/chezmoi
+
+[Dir Hist New Left Panel]
+0=/Users/oscb
+1=/Users/oscb/.local/share
+2=/Users/oscb/.local/share/mc/skins
+3=/Users/oscb/.local/share/chezmoi
