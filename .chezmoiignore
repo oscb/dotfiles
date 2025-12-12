@@ -21,7 +21,7 @@ winget.json
 Brewfile-linux
 {{ end }}
 
-{{ if ne .chezmoi.osRelease.id "arch" }}
+{{ if and (eq .chezmoi.os "linux") (ne .chezmoi.osRelease.id "arch")  }}
 Archfile
 Archfile.aur
 {{ end }}
