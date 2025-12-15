@@ -344,7 +344,7 @@ default_mode "normal"
 //   - detach (Default)
 //   - quit
 // 
-// on_force_close "quit"
+on_force_close "detach"
  
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -463,3 +463,5 @@ default_mode "normal"
 // Default: true
 // 
 // show_release_notes false
+
+default_session_name "main"

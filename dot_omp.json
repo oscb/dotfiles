@@ -29,7 +29,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
@@ -38,7 +38,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": " {{ .UserName }}@{{ .HostName }}<cyan>\uf444</>",
@@ -47,7 +47,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "style": "folder"
           },
@@ -57,7 +57,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "branch_max_length": 25,
             "cache_duration": "none",
             "fetch_stash_count": true,
@@ -84,7 +84,7 @@
       "overflow": "hide",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\ue718 {{ .Full }} ",
@@ -93,7 +93,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\ue235 {{ .Full }} ",
@@ -102,7 +102,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\ue791 {{ .Full}} ",
@@ -111,7 +111,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\ufcd1 {{ .Full}} ",
@@ -120,7 +120,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\ue798 {{ .Full}} ",
@@ -129,7 +129,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\ue28e {{ .Full }} ",
@@ -138,7 +138,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\uf06e5 {{ .Full}} ",
@@ -147,7 +147,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\ue77f {{ .Full}} ",
@@ -156,7 +156,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "x{{ .Meaning }} ",
@@ -168,7 +168,7 @@
           ]
         },
         {
-          "properties": {
+          "options": {
             "always_enabled": true,
             "cache_duration": "none",
             "style": "roundrock"
@@ -182,7 +182,7 @@
           ]
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "time_format": "15:04:05"
           },
@@ -198,7 +198,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "!",
@@ -207,7 +207,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "⚡",
@@ -219,6 +219,6 @@
       "newline": true
     }
   ],
-  "version": 3,
+  "version": 4,
   "final_space": true
 }

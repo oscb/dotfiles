@@ -1,4 +1,5 @@
-{{if eq .chezmoi.osRelease.id "arch" -}}
+{{if eq .chezmoi.os "linux" -}}
+{{if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch") -}}
 #!/bin/bash
 
 # Update package database
@@ -38,4 +39,5 @@ if [ -f "{{ .chezmoi.sourceDir }}/Archfile.aur" ]; then
   fi
 fi
 
+{{ end -}}
 {{ end -}}
