@@ -29,7 +29,7 @@ sudo apt install code
 
 {{ end -}} # debian/ubuntu
 
-{{ if eq .chezmoi.osRelease.id "arch" -}}
+{{ if or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "cachyos") -}}
 
 # Arch Linux-specific code
 sudo pacman -Syu --noconfirm
