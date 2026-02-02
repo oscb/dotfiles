@@ -2,7 +2,7 @@
 export REACT_EDITOR="code --wait"
 
 # Swift
-export TOOLCHAINS=swift
+# export TOOLCHAINS=swift
 
 # Android
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
