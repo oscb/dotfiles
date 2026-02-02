@@ -10,6 +10,8 @@ source <(carapace _carapace)
 # Utils
 
 # Dumps all the Homebrew packages
-function dump-packages() {
-  brew bundle dump -f --all
-}
+if command -v brew &> /dev/null; then
+  function dump-packages() {
+    brew bundle dump -f --all
+  }
+fi
