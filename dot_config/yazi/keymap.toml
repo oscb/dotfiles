@@ -1,3 +1,6 @@
+#
+# Sudo 
+#
 # sudo cp/mv
 [[mgr.prepend_keymap]]
 on = ["R", "p", "p"]
@@ -58,13 +61,48 @@ on = ["R", "m"]
 run = "plugin sudo -- chmod"
 desc = "sudo chmod"
 
+#
 # Smart Enter: https://github.com/yazi-rs/plugins/tree/main/smart-enter.yazi
+#
 [[mgr.prepend_keymap]]
 on   = "l"
 run  = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
 
+#
+# Chmod: https://github.com/yazi-rs/plugins/tree/main/chmod.yazi
+#
+[[mgr.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
+
+#
+# Rsync: https://github.com/GianniBYoung/rsync.yazi
+#
+[[mgr.prepend_keymap]]
+on   = [ "R", "s" ]
+run  = "plugin rsync"
+desc = "Copy files using rsync"
+
+#
+# What Size: https://github.com/pirafrank/what-size.yazi
+#
+[[mgr.prepend_keymap]]
+on = [ ".", "s" ]
+run  = "plugin what-size"
+desc = "Calc size of selection or cwd" 
+
+#
+# Mount: https://github.com/yazi-rs/plugins/tree/main/mount.yazi
+#
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
+
+#
 # Bookmarks: https://github.com/dedukun/bookmarks.yazi
+#
 [[mgr.prepend_keymap]]
 on = [ "m" ]
 run = "plugin bookmarks save"
