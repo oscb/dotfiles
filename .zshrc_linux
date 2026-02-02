@@ -1,0 +1,4 @@
+# Auto-attach to zellij on SSH login
+if [[-z "$ZELLIJ" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+	exec zellij attach --create main
+fi
