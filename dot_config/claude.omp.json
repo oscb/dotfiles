@@ -1,0 +1,125 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "blue": "#89b4fa",
+    "green": "#a6e3a1",
+    "lavender": "#b4befe",
+    "mauve": "#cba6f7",
+    "peach": "#fab387",
+    "pink": "#f5c2e7",
+    "red": "#f38ba8",
+    "sapphire": "#74c7ec",
+    "sky": "#89dceb",
+    "teal": "#94e2d5",
+    "text": "#cdd6f4",
+    "yellow": "#f9e2af"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "options": {
+            "folder_separator_icon": "\ue0bb",
+            "style": "folder"
+          },
+          "template": "\uea83 <b>{{ .Path }}</b>",
+          "foreground": "p:mauve",
+          "type": "path",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "branch_icon": "\ue0a0",
+            "fetch_status": true
+          },
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "foreground": "p:teal",
+          "type": "git",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:peach{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}",
+            "{{ if gt .Ahead 0 }}p:lavender{{ end }}",
+            "{{ if gt .Behind 0 }}p:lavender{{ end }}"
+          ]
+        },
+        {
+          "template": " \udb82\udfc9 {{ .Model.DisplayName }} \uf2d0 {{ .TokenUsagePercent.GaugeUsed }} ",
+          "foreground": "p:pink",
+          "type": "claude",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "charged_icon": "\ue22f ",
+            "charging_icon": "\ue234 ",
+            "discharging_icon": "\ue231 "
+          },
+          "cache": {
+            "duration": "10m",
+            "strategy": "session"
+          },
+          "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}% {{ end}}",
+          "foreground": "p:green",
+          "type": "battery",
+          "style": "plain",
+          "foreground_templates": [
+            "{{if eq \"Discharging\" .State.String}}p:peach{{end}}",
+            "{{if eq \"Full\" .State.String}}p:green{{end}}"
+          ]
+        },
+        {
+          "template": "\ue718 {{ .Full }} ",
+          "foreground": "p:green",
+          "type": "node",
+          "style": "plain"
+        },
+        {
+          "template": "\ue235 {{ .Full }} ",
+          "foreground": "p:yellow",
+          "type": "python",
+          "style": "plain"
+        },
+        {
+          "template": "\ue791 {{ .Full }} ",
+          "foreground": "p:red",
+          "type": "ruby",
+          "style": "plain"
+        },
+        {
+          "template": "\ufcd1 {{ .Full }} ",
+          "foreground": "p:sky",
+          "type": "go",
+          "style": "plain"
+        },
+        {
+          "template": "\ue798 {{ .Full }} ",
+          "foreground": "p:sapphire",
+          "type": "dart",
+          "style": "plain"
+        },
+        {
+          "template": "\ue28e {{ .Full }} ",
+          "foreground": "p:blue",
+          "type": "flutter",
+          "style": "plain"
+        },
+        {
+          "template": "\uf06e5 {{ .Full }} ",
+          "foreground": "p:peach",
+          "type": "swift",
+          "style": "plain"
+        },
+        {
+          "template": "\ue77f {{ .Full }} ",
+          "foreground": "p:lavender",
+          "type": "dotnet",
+          "style": "plain"
+        }
+      ]
+    }
+  ],
+  "version": 4
+}
