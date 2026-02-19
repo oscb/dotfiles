@@ -1,4 +1,5 @@
 {
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "oh-my-posh claude --config ~/.config/claude.omp.json",
