@@ -3,9 +3,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
   export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 
 # Carapace autocomplete
-export CARAPACE_BRIDGES='zsh,bash,inshellisense' # optional
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-source <(carapace _carapace)
+# export CARAPACE_BRIDGES='zsh,bash,inshellisense' # optional
+# zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+# source <(carapace _carapace)
 
 # Utils
 

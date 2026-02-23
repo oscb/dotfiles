@@ -4,9 +4,9 @@ if [[ -z "$ZELLIJ" ]] && [[ -n "$SSH_CONNECTION" ]]; then
 fi
 
 # Carapace autocomplete
-export CARAPACE_BRIDGES='zsh,bash,inshellisense' # optional
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-source <(carapace _carapace)
+# export CARAPACE_BRIDGES='zsh,bash,inshellisense' # optional
+# zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+# source <(carapace _carapace)
 
 # Utils
 
