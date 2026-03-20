@@ -1,6 +1,6 @@
 {{- if eq .chezmoi.os "linux" -}}
 # Homebrew for Linux
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[[ -x /home/linuxbrew/.linuxbrew/bin/brew ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Auto-attach to zellij on SSH login
 if [[ -z "$ZELLIJ" ]] && [[ -n "$SSH_CONNECTION" ]]; then
@@ -10,6 +10,16 @@ fi
 
 # Alias for git
 alias gith="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
+
+# Modern CLI aliases
+if command -v eza &> /dev/null; then
+  alias ls="eza"
+  alias ll="eza -la --icons --git"
+  alias tree="eza --tree"
+fi
+if command -v fd &> /dev/null; then
+  alias find="fd"
+fi
 
 # Mise (replacing ASDF)
 eval "$(mise activate zsh)"
@@ -27,14 +37,14 @@ alias gitui="gitui -t catpuccin-mocha.ron"
 # eval "$(zellij setup --generate-auto-start zsh)"
 
 # Init the Completion System and add HomeBrew to FPath
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+if type brew &>/dev/null; then
+  _brew_prefix="$(brew --prefix)"
+  FPATH="${_brew_prefix}/share/zsh/site-functions:${FPATH}"
 fi
 autoload -Uz compinit && compinit -i
 
 # Antidote
-source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+source "${_brew_prefix}/opt/antidote/share/antidote/antidote.zsh"
 antidote load
 
 # Zoxide autocomplete
@@ -52,9 +62,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 {{- end }}
 
 # Carapace autocomplete
-# export CARAPACE_BRIDGES='zsh,bash,inshellisense' # optional
-# zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-# source <(carapace _carapace)
+export CARAPACE_BRIDGES='zsh,bash,inshellisense'
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
 
 # Dumps all the Homebrew packages
 if command -v brew &> /dev/null; then
