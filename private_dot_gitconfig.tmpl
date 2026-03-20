@@ -1,10 +1,8 @@
-{{-   include ".gitconfig_base" -}}
+{{-   template "git/base" . -}}
 {{- if eq .chezmoi.os "darwin" -}}
-{{-   include ".gitconfig_mac" -}}
+{{-   template "git/darwin" . -}}
 {{- else if eq .chezmoi.os "windows" -}}
-{{-   include ".gitconfig_windows" -}}
+{{-   template "git/windows" . -}}
 {{- else if eq .chezmoi.os "linux" -}}
-{{-   include ".gitconfig_linux" -}}
+{{-   template "git/linux" . -}}
 {{- end -}}
-
-
