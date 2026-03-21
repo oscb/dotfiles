@@ -40,13 +40,13 @@ alias gitui="gitui -t catpuccin-mocha.ron"
 if type brew &>/dev/null; then
   _brew_prefix="$(brew --prefix)"
   FPATH="${_brew_prefix}/share/zsh/site-functions:${FPATH}"
+  # Antidote
+  if [ -r "${_brew_prefix}/opt/antidote/share/antidote/antidote.zsh" ]; then
+    source "${_brew_prefix}/opt/antidote/share/antidote/antidote.zsh"
+    antidote load
+  fi
 fi
 autoload -Uz compinit && compinit -i
-
-# Antidote
-source "${_brew_prefix}/opt/antidote/share/antidote/antidote.zsh"
-antidote load
-
 # Zoxide autocomplete
 eval "$(zoxide init zsh --cmd cd)"
 
