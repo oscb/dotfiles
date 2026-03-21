@@ -4,9 +4,9 @@
 # Debian-specific code
 sudo apt update
 
-# ZSH
-sudo apt install zsh
-chsh -s /bin/zsh
+# Fish shell
+sudo apt install fish
+chsh -s /usr/bin/fish
 
 # VSCode
 {{ if eq (lookPath "code") "" }}
@@ -33,9 +33,9 @@ sudo apt install code
 # Arch Linux-specific code
 sudo pacman -Syu --noconfirm
 
-# ZSH
-sudo pacman -S --needed --noconfirm zsh
-chsh -s /usr/bin/zsh
+# Fish shell
+sudo pacman -S --needed --noconfirm fish
+chsh -s /usr/bin/fish
 
 # Install AUR helper (paru or yay) if not present
 {{ if and (eq (lookPath "paru") "") (eq (lookPath "yay") "") }}
@@ -63,9 +63,9 @@ yay -S --needed --noconfirm visual-studio-code-bin
 # Raspberry Specific code
 sudo apt update
 
-# ZSH
-sudo apt install zsh
-chsh -s /bin/zsh
+# Fish shell
+sudo apt install fish
+chsh -s /usr/bin/fish
 
 {{ end -}} # Raspberry
 

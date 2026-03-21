@@ -1,0 +1,107 @@
+{{- if eq .chezmoi.os "linux" -}}
+# Homebrew for Linux
+if test -x /home/linuxbrew/.linuxbrew/bin/brew
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+end
+
+# Auto-attach to zellij on SSH login
+if test -z "$ZELLIJ"; and test -n "$SSH_CONNECTION"
+    exec zellij attach --create main
+end
+{{- end }}
+
+# Alias for git
+alias gith="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
+
+# Modern CLI aliases
+if type -q eza
+    alias ls="eza"
+    alias ll="eza -la --icons --git"
+    alias tree="eza --tree"
+end
+if type -q fd
+    alias find="fd"
+end
+
+# Mise (replacing ASDF)
+if type -q mise
+    mise activate fish | source
+end
+
+# Oh-my-posh
+if type -q oh-my-posh
+    oh-my-posh init fish --config ~/.config/omp.json | source
+end
+
+# Set up fzf key bindings and fuzzy completion
+if type -q fzf
+    fzf --fish | source
+end
+
+# GitUI With Mocha theme
+alias gitui="gitui -t catpuccin-mocha.ron"
+
+# Start zellij automatically (not in VSCode)
+if test "$TERM_PROGRAM" != "vscode"; and type -q zellij
+    eval (zellij setup --generate-auto-start fish)
+end
+
+# Homebrew completions
+if type -q brew
+    set -l brew_prefix (brew --prefix)
+    if test -d "$brew_prefix/share/fish/completions"
+        set -gp fish_complete_path "$brew_prefix/share/fish/completions"
+    end
+    if test -d "$brew_prefix/share/fish/vendor_completions.d"
+        set -gp fish_complete_path "$brew_prefix/share/fish/vendor_completions.d"
+    end
+end
+
+# Zoxide (smart cd)
+if type -q zoxide
+    zoxide init fish --cmd cd | source
+end
+
+# Atuin shell history
+if type -q atuin
+    atuin init fish | source
+end
+
+{{- if eq .chezmoi.os "darwin" }}
+
+# iTerm integration
+if test -e "$HOME/.iterm2_shell_integration.fish"
+    source "$HOME/.iterm2_shell_integration.fish"
+end
+set -gx ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX YES
+{{- end }}
+
+# Carapace autocomplete
+if type -q carapace
+    set -gx CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
+    carapace _carapace | source
+end
+
+# Dumps all the Homebrew packages
+if type -q brew
+    function dump-packages
+{{- if eq .chezmoi.os "darwin" }}
+        brew bundle dump -f --all
+{{- else }}
+        brew bundle dump -f --all --file BrewfileLinux
+{{- end }}
+    end
+end
+
+# Television init
+if type -q tv
+    tv init fish | source
+end
+
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# WSL-specific code
+alias ssh='ssh.exe'
+alias ssh-add='ssh-add.exe'
+{{   end }}
+{{ end }}

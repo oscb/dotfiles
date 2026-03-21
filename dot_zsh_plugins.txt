@@ -1,6 +1,6 @@
 # .zsh_plugins.txt
 
-zsh-users/zsh-completions
+#zsh-users/zsh-completions
 olets/zsh-abbr    kind:defer
 ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
@@ -13,7 +13,7 @@ mattmc3/zfunctions
 marlonrichert/zsh-autocomplete
 
 # Autosuggest
-zsh-users/zsh-autosuggestions
+#zsh-users/zsh-autosuggestions
 
 # Syntax Highlight
 zdharma-continuum/fast-syntax-highlighting kind:defer

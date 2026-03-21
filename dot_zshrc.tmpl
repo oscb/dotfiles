@@ -34,7 +34,9 @@ source <(fzf --zsh)
 alias gitui="gitui -t catpuccin-mocha.ron"
 
 # Start zellij automatically
-# eval "$(zellij setup --generate-auto-start zsh)"
+if [[ "${TERM_PROGRAM:-}" != "vscode" ]]; then
+  eval "$(zellij setup --generate-auto-start zsh)"
+fi
 
 # Init the Completion System and add HomeBrew to FPath
 if type brew &>/dev/null; then
@@ -51,7 +53,6 @@ autoload -Uz compinit && compinit -i
 eval "$(zoxide init zsh --cmd cd)"
 
 # Atuin
-# . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
 {{- if eq .chezmoi.os "darwin" }}
@@ -63,7 +64,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Carapace autocomplete
 if command -v carapace &> /dev/null; then
-  export CARAPACE_BRIDGES='zsh,bash,inshellisense'
+  export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
   zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
   source <(carapace _carapace)
 fi
@@ -78,6 +79,9 @@ if command -v brew &> /dev/null; then
 {{- end }}
   }
 fi
+
+# Television init
+eval "$(tv init zsh)"
 
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
