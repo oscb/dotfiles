@@ -1,17 +1,83 @@
 {{- if eq .chezmoi.os "linux" -}}
 # Homebrew for Linux
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-{{- end -}}
+[[ -x /home/linuxbrew/.linuxbrew/bin/brew ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# Auto-attach to zellij on SSH login
+if [[ -z "$ZELLIJ" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+	exec zellij attach --create main
+fi
+{{- end }}
 
-{{-   include ".zshrc_base" -}}
+# Alias for git
+alias gith="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
 
-{{- if eq .chezmoi.os "darwin" -}}
-{{-   include ".zshrc_mac" -}}
-{{- else if eq .chezmoi.os "linux" -}}
-{{-   include ".zshrc_linux" -}}
-{{- end -}}
-{{-   include ".zshrc_base_post" -}}
+# Modern CLI aliases
+if command -v eza &> /dev/null; then
+  alias ls="eza"
+  alias ll="eza -la --icons --git"
+  alias tree="eza --tree"
+fi
+if command -v fd &> /dev/null; then
+  alias find="fd"
+fi
+
+# Mise (replacing ASDF)
+eval "$(mise activate zsh)"
+
+# Oh-my-posh
+eval "$(oh-my-posh init zsh --config ~/.config/omp.json)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# GitUI With Mocha theme
+alias gitui="gitui -t catpuccin-mocha.ron"
+
+# Start zellij automatically
+# eval "$(zellij setup --generate-auto-start zsh)"
+
+# Init the Completion System and add HomeBrew to FPath
+if type brew &>/dev/null; then
+  _brew_prefix="$(brew --prefix)"
+  FPATH="${_brew_prefix}/share/zsh/site-functions:${FPATH}"
+  # Antidote
+  if [ -r "${_brew_prefix}/opt/antidote/share/antidote/antidote.zsh" ]; then
+    source "${_brew_prefix}/opt/antidote/share/antidote/antidote.zsh"
+    antidote load
+  fi
+fi
+autoload -Uz compinit && compinit -i
+# Zoxide autocomplete
+eval "$(zoxide init zsh --cmd cd)"
+
+# Atuin
+# . "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
+{{- if eq .chezmoi.os "darwin" }}
+
+# iTerm integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+  export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+{{- end }}
+
+# Carapace autocomplete
+if command -v carapace &> /dev/null; then
+  export CARAPACE_BRIDGES='zsh,bash,inshellisense'
+  zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+  source <(carapace _carapace)
+fi
+
+# Dumps all the Homebrew packages
+if command -v brew &> /dev/null; then
+  function dump-packages() {
+{{- if eq .chezmoi.os "darwin" }}
+    brew bundle dump -f --all
+{{- else }}
+    brew bundle dump -f --all --file BrewfileLinux
+{{- end }}
+  }
+fi
 
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}

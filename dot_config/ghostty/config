@@ -50,5 +50,4 @@ window-padding-x = 10
 cursor-style=block
 
 # SSH Fixing Terminfo integration (https://ghostty.org/docs/help/terminfo#ssh)
-shell-integration-features = ssh-terminfo
-shell-integration-features = ssh-env
+shell-integration-features = ssh-terminfo,ssh-env

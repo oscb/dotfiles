@@ -15,9 +15,6 @@ marlonrichert/zsh-autocomplete
 # Autosuggest
 zsh-users/zsh-autosuggestions
 
-# Completions
-zsh-users/zsh-completions
-
 # Syntax Highlight
 zdharma-continuum/fast-syntax-highlighting kind:defer
 
