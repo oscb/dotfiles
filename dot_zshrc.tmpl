@@ -62,9 +62,11 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 {{- end }}
 
 # Carapace autocomplete
-export CARAPACE_BRIDGES='zsh,bash,inshellisense'
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-source <(carapace _carapace)
+if command -v carapace &> /dev/null; then
+  export CARAPACE_BRIDGES='zsh,bash,inshellisense'
+  zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+  source <(carapace _carapace)
+fi
 
 # Dumps all the Homebrew packages
 if command -v brew &> /dev/null; then
