@@ -41,9 +41,9 @@ end
 # GitUI With Mocha theme
 alias gitui="gitui -t catpuccin-mocha.ron"
 
-# Start zellij automatically (not in VSCode)
-if test "$TERM_PROGRAM" != "vscode"; and type -q zellij
-    eval (zellij setup --generate-auto-start fish)
+# Start zellij automatically (except in VSCode)
+if status is-interactive; and test "$TERM_PROGRAM" != "vscode"; and type -q zellij; and not set -q ZELLIJ
+    eval (zellij setup --generate-auto-start fish | string collect)
 end
 
 # Homebrew completions
