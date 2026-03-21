@@ -4,10 +4,6 @@
 # Debian-specific code
 sudo apt update
 
-# Fish shell
-sudo apt install fish
-chsh -s /usr/bin/fish
-
 # VSCode
 {{ if eq (lookPath "code") "" }}
 sudo apt-get install wget gpg
@@ -62,10 +58,6 @@ yay -S --needed --noconfirm visual-studio-code-bin
 {{ if eq .chezmoi.osRelease.id "raspbian" -}}
 # Raspberry Specific code
 sudo apt update
-
-# Fish shell
-sudo apt install fish
-chsh -s /usr/bin/fish
 
 {{ end -}} # Raspberry
 

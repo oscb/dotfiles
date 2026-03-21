@@ -1,0 +1,19 @@
+#!/bin/sh
+{{ if eq .chezmoi.os "linux" -}}
+{{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") (eq .chezmoi.osRelease.id "raspbian") -}}
+# Set fish (from Homebrew) as the default shell
+
+FISH_PATH=$(which fish)
+
+if [ -n "$FISH_PATH" ]; then
+    # Add fish to allowed shells if not already present
+    if ! grep -q "^${FISH_PATH}$" /etc/shells; then
+        echo "$FISH_PATH" | sudo tee -a /etc/shells
+    fi
+
+    # Set fish as the default shell
+    chsh -s "$FISH_PATH"
+fi
+
+{{ end -}}
+{{ end -}}
