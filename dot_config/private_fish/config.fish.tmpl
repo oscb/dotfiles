@@ -1,14 +1,21 @@
 {{- if eq .chezmoi.os "linux" -}}
 # Homebrew for Linux
 if test -x /home/linuxbrew/.linuxbrew/bin/brew
-    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
 end
+{{- end }}
+
+{{- if eq .chezmoi.os "darwin" -}}
+# Homebrew for Mac
+if test -x /opt/homebrew/bin/brew
+    eval (/opt/homebrew/bin/brew shellenv fish)
+end
+{{- end }}
 
 # Auto-attach to zellij on SSH login
 if test -z "$ZELLIJ"; and test -n "$SSH_CONNECTION"
     exec zellij attach --create main
 end
-{{- end }}
 
 # Alias for git
 alias gith="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
