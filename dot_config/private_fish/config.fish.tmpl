@@ -12,8 +12,14 @@ if test -x /opt/homebrew/bin/brew
 end
 {{- end }}
 
-# Auto-attach to zellij on SSH login
-if test -z "$ZELLIJ"; and test -n "$SSH_CONNECTION"
+# Export LC_ZELLIJ when inside Zellij to send to SSH connections
+# Prevents nested zellijs
+if set -q ZELLIJ
+    set -gx LC_ZELLIJ 1
+end
+
+# Auto-attach to zellij on SSH login (skip if client is already in zellij)
+if test -z "$ZELLIJ"; and test -n "$SSH_CONNECTION"; and test -z "$LC_ZELLIJ"
     exec zellij attach --create main
 end
 
