@@ -12,17 +12,6 @@ if test -x /opt/homebrew/bin/brew
 end
 {{- end }}
 
-# Export LC_ZELLIJ when inside Zellij to send to SSH connections
-# Prevents nested zellijs
-if set -q ZELLIJ
-    set -gx LC_ZELLIJ 1
-end
-
-# Auto-attach to zellij on SSH login (skip if client is already in zellij)
-if test -z "$ZELLIJ"; and test -n "$SSH_CONNECTION"; and test -z "$LC_ZELLIJ"
-    exec zellij attach --create main
-end
-
 # Alias for git
 alias gith="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
 
@@ -54,8 +43,18 @@ end
 # GitUI With Mocha theme
 alias gitui="gitui -t catpuccin-mocha.ron"
 
-# Start zellij automatically (except in VSCode)
-if status is-interactive; and test "$TERM_PROGRAM" != "vscode"; and type -q zellij; and not set -q ZELLIJ
+# Export LC_ZELLIJ when inside Zellij to send to SSH connections
+# Prevents nested zellijs
+if set -q ZELLIJ
+    set -gx LC_ZELLIJ 1
+end
+
+# Start zellij automatically (except in VSCode, not nested)
+if status is-interactive; and test "$TERM_PROGRAM" != "vscode"; and type -q zellij; and not set -q ZELLIJ; and test "$LC_ZELLIJ" != "1"
+    # Enable auto-attach in SSH sessions
+    if set -q SSH_CONNECTION
+        set -gx ZELLIJ_AUTO_ATTACH true
+    end
     eval (zellij setup --generate-auto-start fish | string collect)
 end
 
