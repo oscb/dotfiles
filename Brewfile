@@ -51,7 +51,6 @@ brew "cocoapods"
 brew "ddgr"
 brew "deno"
 brew "dialog"
-brew "delta"
 brew "difftastic"
 brew "docutils"
 brew "drill"
@@ -71,6 +70,7 @@ brew "sdl2"
 brew "ffmpeg"
 brew "gnutls"
 brew "libmicrohttpd"
+brew "fish"
 brew "fx"
 brew "fzf"
 brew "gawk"
@@ -78,6 +78,7 @@ brew "gdu"
 brew "gemini-cli"
 brew "gh"
 brew "git"
+brew "git-delta"
 brew "git-lfs"
 brew "gitui"
 brew "glow"
@@ -139,8 +140,8 @@ brew "tailscale"
 brew "tcl-tk"
 brew "television"
 brew "telnet"
-brew "tldr"
 brew "tiger-vnc"
+brew "tldr"
 brew "ugit"
 brew "ugrep"
 brew "uv"
@@ -156,9 +157,9 @@ brew "yazi"
 brew "yq"
 brew "yt-dlp"
 brew "zellij"
+brew "zinit"
 brew "zoxide"
 brew "zsh"
-brew "fish"
 brew "achannarasappa/tap/ticker"
 brew "antoniorodr/cronboard/cronboard"
 brew "antoniorodr/memo/memo"
@@ -201,6 +202,8 @@ cask "dockdoor"
 cask "docker-desktop"
 cask "font-cascadia-code"
 cask "font-cascadia-code-pl"
+cask "font-maple-mono"
+cask "font-maple-mono-nf"
 cask "font-monaspace"
 cask "font-monaspace-nf"
 cask "font-server-mono"
@@ -236,7 +239,7 @@ cask "orbstack"
 cask "oversight"
 cask "privadovpn"
 cask "qflipper"
-cask "qlvideo"
+cask "quicklook-video"
 cask "raycast"
 cask "readest"
 cask "rockboxutility"
@@ -288,16 +291,13 @@ mas "Gifski", id: 1351639930
 mas "GoodLinks", id: 1474335294
 mas "Goodnotes", id: 1444383602
 mas "HACK", id: 1464477788
-mas "Helm", id: 6479357934
 mas "Home Assistant", id: 1099568401
 mas "Hush", id: 1544743900
 mas "iMovie", id: 408981434
-mas "Infuse", id: 1136220934
 mas "Ivory", id: 6444602274
 mas "Jayson", id: 1468691718
 mas "Keepa - Price Tracker", id: 1533805339
 mas "Keynote", id: 409183694
-mas "Manet", id: 0
 mas "Mela", id: 1568924476
 mas "My Links", id: 6504573402
 mas "News Explorer", id: 1032670789
@@ -318,8 +318,8 @@ mas "PiPifier", id: 1160374471
 mas "Pixelmator Pro", id: 1289583905
 mas "Poolsuite FM", id: 1514817810
 mas "Rakuten Cash Back", id: 1451893560
-mas "Reeder", id: 6475002485
 mas "Reeder", id: 1529448980
+mas "Reeder", id: 6475002485
 mas "Refined GitHub", id: 1519867270
 mas "Reins", id: 6739738501
 mas "Screens 5", id: 1663047912
@@ -329,10 +329,10 @@ mas "Slack", id: 803453959
 mas "SponsorBlock", id: 1573461917
 mas "Steam Link", id: 1246969117
 mas "Streaks", id: 963034692
-mas "Structured", id: 1499198946
 mas "Supercopy", id: 6477720316
 mas "Swift Playground", id: 1496833156
 mas "Tailscale", id: 1475387142
+mas "Termius", id: 1176074088
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "Transporter", id: 1450874784
@@ -405,6 +405,9 @@ vscode "me-dutour-mathieu.vscode-github-actions"
 vscode "mechatroner.rainbow-csv"
 vscode "miguelsolorio.fluent-icons"
 vscode "mikestead.dotenv"
+vscode "ms-azuretools.vscode-azure-github-copilot"
+vscode "ms-azuretools.vscode-azure-mcp-server"
+vscode "ms-azuretools.vscode-azureresourcegroups"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-dotnettools.csharp"

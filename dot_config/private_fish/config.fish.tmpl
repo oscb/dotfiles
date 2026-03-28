@@ -69,6 +69,18 @@ if type -q brew
     end
 end
 
+# Yazi file manager (cd on quit with 'y')
+if type -q yazi
+    function y
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+        if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            builtin cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
+    end
+end
+
 # Zoxide (smart cd)
 if type -q zoxide
     zoxide init fish --cmd cd | source
@@ -78,6 +90,7 @@ end
 if type -q atuin
     atuin init fish | source
 end
+
 
 {{- if eq .chezmoi.os "darwin" }}
 
@@ -116,4 +129,9 @@ end
 alias ssh='ssh.exe'
 alias ssh-add='ssh-add.exe'
 {{   end }}
+{{ end }}
+
+{{ if eq .chezmoi.os "darwin" }}
+# Obsidian CLI
+fish_add_path /Applications/Obsidian.app/Contents/MacOS
 {{ end }}

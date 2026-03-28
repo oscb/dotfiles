@@ -12,4 +12,29 @@ fi
 brew update
 
 brew bundle --file=BrewfileLinux || true
+
+# Generate fish completions for CLI tools
+COMP_DIR="$HOME/.config/fish/completions"
+mkdir -p "$COMP_DIR"
+
+command -v chezmoi  >/dev/null && chezmoi completion fish                  > "$COMP_DIR/chezmoi.fish"
+command -v gh       >/dev/null && gh completion -s fish                    > "$COMP_DIR/gh.fish"
+command -v just     >/dev/null && just --completions fish                  > "$COMP_DIR/just.fish"
+command -v kubectl  >/dev/null && kubectl completion fish                  > "$COMP_DIR/kubectl.fish"
+command -v rclone   >/dev/null && rclone completion fish -                 > "$COMP_DIR/rclone.fish"
+command -v uv       >/dev/null && uv generate-shell-completion fish        > "$COMP_DIR/uv.fish"
+command -v uvx      >/dev/null && uvx --generate-shell-completion fish     > "$COMP_DIR/uvx.fish"
+command -v deno     >/dev/null && deno completions fish                    > "$COMP_DIR/deno.fish"
+command -v yq       >/dev/null && yq shell-completion fish                 > "$COMP_DIR/yq.fish"
+command -v delta    >/dev/null && delta --generate-completion fish          > "$COMP_DIR/delta.fish"
+command -v tailscale >/dev/null && tailscale completion fish               > "$COMP_DIR/tailscale.fish"
+command -v bat      >/dev/null && bat --completion fish                     > "$COMP_DIR/bat.fish"
+command -v fd       >/dev/null && fd --gen-completions fish                 > "$COMP_DIR/fd.fish"
+command -v rg       >/dev/null && rg --generate complete-fish              > "$COMP_DIR/rg.fish"
+command -v procs    >/dev/null && procs --gen-completion-out fish           > "$COMP_DIR/procs.fish"
+command -v mise     >/dev/null && mise completions fish                    > "$COMP_DIR/mise.fish"
+command -v zellij   >/dev/null && zellij setup --generate-completion fish   > "$COMP_DIR/zellij.fish"
+command -v atuin    >/dev/null && atuin gen-completions --shell fish        > "$COMP_DIR/atuin.fish"
+
+echo "Fish completions generated in $COMP_DIR"
 {{ end -}}
