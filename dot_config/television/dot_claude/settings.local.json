@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tv --version)",
+      "Bash(tv --help)",
+      "Bash(tv update-channels *)",
+      "WebFetch(domain:alexpasmantier.github.io)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(zoxide query *)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(zellij list-sessions *)",
+      "Bash(zellij list-aliases *)",
+      "Read(//Users/oscb/.config/zellij/**)",
+      "Read(//Users/oscb/.ssh/**)",
+      "Bash(zellij attach *)",
+      "Bash(zellij delete-session *)",
+      "Bash(zellij delete-all-sessions *)",
+      "Bash(zellij kill-session *)",
+      "Bash(tv list-channels *)",
+      "Bash(fish -c 'grep -E '\\\\''^Host\\(name\\)? '\\\\'' $HOME/.ssh/config | tr -s '\\\\'' '\\\\'' | cut -d'\\\\'' '\\\\'' -f2- | tr '\\\\'' '\\\\'' '\\\\''\\\\n'\\\\'' | grep -v '\\\\''^$'\\\\''')",
+      "Bash(fish -c \"ls ~/.config/zellij/layouts/ 2>/dev/null | sed 's/\\\\.kdl//'; echo default; echo compact; echo strider\")",
+      "Bash(fish -c 'grep -E '\\\\''^Host\\(name\\)? '\\\\'' $HOME/.ssh/config | tr -s '\\\\'' '\\\\'' | cut -d'\\\\'' '\\\\'' -f2- | tr '\\\\'' '\\\\'' '\\\\''\\\\n'\\\\'' | grep -vE '\\\\''^$|[*?]'\\\\''')",
+      "Bash(km ls *)",
+      "Bash(km --help)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' --max-time 6 https://komodo.matchacat.club/)",
+      "Bash(command -v jq)",
+      "Bash(paperless --help)",
+      "Bash(paperless search *)",
+      "Bash(paperless document *)",
+      "Bash(paperless config *)",
+      "Bash(paperless tag *)",
+      "Bash(fish *)",
+      "Bash(echo \"=== exit: $? ===\")",
+      "Bash(functions tv_smart_autocomplete)"
+    ]
+  }
+}

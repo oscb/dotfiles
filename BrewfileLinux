@@ -32,7 +32,6 @@ brew "miller"
 brew "mise"
 brew "mosh"
 brew "nushell"
-brew "ollama", restart_service: true
 brew "pandoc"
 brew "pgcli"
 brew "procs"

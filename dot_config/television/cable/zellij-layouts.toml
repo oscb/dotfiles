@@ -1,0 +1,24 @@
+[metadata]
+name = "zellij-layouts"
+description = "Start a new zellij session from a layout"
+requirements = ["zellij"]
+
+[source]
+# User layouts (~/.config/zellij/layouts/*.kdl, without the extension) plus built-ins.
+command = "ls ~/.config/zellij/layouts/ 2>/dev/null | sed 's/\\.kdl//'; echo default; echo compact; echo strider"
+no_sort = true
+
+[preview]
+command = "bat --color=always --language=kdl ~/.config/zellij/layouts/{}.kdl 2>/dev/null || echo 'Built-in layout: {}'"
+
+[ui]
+preview_panel = { size = 55 }
+
+[keybindings]
+enter = "actions:new"
+
+[actions.new]
+# `zellij --layout NAME` resolves NAME from the layout dir or as a built-in.
+description = "Start a new session with the selected layout"
+command = "zellij --layout '{}'"
+mode = "execute"

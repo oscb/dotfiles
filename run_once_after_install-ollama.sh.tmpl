@@ -1,0 +1,11 @@
+#!/bin/sh
+{{ if or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin") -}}
+# Install Ollama via the official installer (includes GPU support).
+# Not installed through Homebrew/pacman so NVIDIA/AMD/Metal acceleration is detected.
+if command -v ollama >/dev/null 2>&1; then
+  echo "Ollama already installed, skipping."
+else
+  echo "Installing Ollama via official installer..."
+  curl -fsSL https://ollama.com/install.sh | sh
+fi
+{{ end -}}

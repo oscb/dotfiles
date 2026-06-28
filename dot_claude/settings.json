@@ -1,5 +1,4 @@
 {
-  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "oh-my-posh claude --config ~/.config/claude.omp.json",
@@ -18,7 +17,12 @@
     "playwright@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true
+    "code-simplifier@claude-plugins-official": true,
+    "clangd-lsp@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
 }

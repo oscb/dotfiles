@@ -1,0 +1,31 @@
+[metadata]
+name = "zoxide"
+description = "Browse zoxide directory history"
+requirements = ["zoxide"]
+
+[source]
+command = "zoxide query -l"
+no_sort = true
+frecency = false
+
+[preview]
+# eza on macOS (GNU `ls --color=always` isn't supported by BSD ls); falls back to ls.
+command = "eza -la --color=always --icons '{}' 2>/dev/null || ls -lAh '{}'"
+ansi = true
+
+[ui]
+preview_panel = { size = 55 }
+
+[keybindings]
+enter = "actions:cd"
+ctrl-d = "actions:remove"
+
+[actions.cd]
+description = "Change to the selected directory"
+command = "cd '{}' && $SHELL"
+mode = "execute"
+
+[actions.remove]
+description = "Remove the selected directory from zoxide"
+command = "zoxide remove '{}'"
+mode = "fork"

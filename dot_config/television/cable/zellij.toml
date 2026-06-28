@@ -1,0 +1,45 @@
+[metadata]
+name = "zellij"
+description = "List, attach, resurrect and manage zellij sessions"
+requirements = ["zellij"]
+
+[source]
+# `--no-formatting` strips ANSI so the first space-delimited token is the session name.
+# Running sessions show `name [Created ...]`; dead ones add `(EXITED - attach to resurrect)`.
+command = "zellij list-sessions --no-formatting --reverse"
+output = "{split: :0}"
+no_sort = true
+
+[preview]
+# Re-run the formatted list and pull the matching line so status/created-time stays colored.
+command = "zellij list-sessions 2>/dev/null | grep -F -- '{split: :0}' || echo 'No session details available'"
+ansi = true
+
+[ui]
+preview_panel = { size = 40 }
+
+[keybindings]
+enter = "actions:attach"
+ctrl-d = "actions:delete"
+ctrl-x = "actions:kill"
+
+[actions.attach]
+# Attaching to an EXITED session resurrects it automatically.
+description = "Attach to (or resurrect) the selected session"
+command = "zellij attach '{split: :0}'"
+mode = "execute"
+
+[actions.kill]
+description = "Kill the selected running session"
+command = "zellij kill-session '{split: :0}'"
+mode = "fork"
+
+[actions.delete]
+description = "Delete the selected session (force-kill if running)"
+command = "zellij delete-session --force '{split: :0}'"
+mode = "fork"
+
+[actions.delete-all]
+description = "Delete every exited session"
+command = "zellij delete-all-sessions --yes --force"
+mode = "fork"

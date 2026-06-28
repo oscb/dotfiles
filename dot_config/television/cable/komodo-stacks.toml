@@ -1,0 +1,54 @@
+[metadata]
+name = "komodo-stacks"
+description = "List Komodo stacks with status and deploy/restart/stop/destroy them"
+requirements = ["km", "jq"]
+
+[source]
+# `-a` includes down stacks; JSON output is parsed into "name<TAB>state".
+# State key is probed in a few likely spots to stay robust across km versions.
+command = "km ls stacks -a -f json | jq -r '.[] | [.name, (.info.state // .state // .status // \"unknown\")] | @tsv'"
+display = "{split:\t:0}  [{split:\t:1}]"
+output = "{split:\t:0}"
+no_sort = true
+
+[preview]
+# Full JSON detail for the highlighted stack (colored via `jq -C`).
+command = "km ls stacks -n '{split:\t:0}' -a -f json | jq -C '.[0]'"
+ansi = true
+
+[ui]
+preview_panel = { size = 55 }
+
+# All mutating actions are run WITHOUT `-y`, so `km` shows its own y/n
+# confirmation in the terminal before doing anything — no accidental deploys.
+[keybindings]
+enter = "actions:deploy"
+ctrl-r = "actions:restart"
+ctrl-s = "actions:stop"
+ctrl-d = "actions:destroy"
+ctrl-g = "actions:deploy-if-changed"
+
+[actions.deploy]
+description = "Deploy stack (compose up — pulls + (re)starts)"
+command = "km x deploy-stack '{split:\t:0}'"
+mode = "execute"
+
+[actions.restart]
+description = "Restart stack"
+command = "km x restart-stack '{split:\t:0}'"
+mode = "execute"
+
+[actions.stop]
+description = "Stop stack (containers stay)"
+command = "km x stop-stack '{split:\t:0}'"
+mode = "execute"
+
+[actions.destroy]
+description = "Destroy stack (compose down — removes containers)"
+command = "km x destroy-stack '{split:\t:0}'"
+mode = "execute"
+
+[actions.deploy-if-changed]
+description = "Deploy only if the compose config changed"
+command = "km x deploy-stack-if-changed '{split:\t:0}'"
+mode = "execute"

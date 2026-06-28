@@ -1,0 +1,20 @@
+# Ollama per-machine config
+ollama:
+  # Shared
+  serviceEnv:
+    - 'OLLAMA_HOST=0.0.0.0'
+    - 'OLLAMA_FLASH_ATTENTION=1'
+    - 'OLLAMA_KV_CACHE_TYPE=q8_0'
+  hosts:
+    infinity:
+      contextLength: 8192 # GTX 1080 (8GB)
+      models:
+        - gemma4:e2b
+        - phi4-mini
+        - minicpm-v
+    aurora:
+      contextLength: 32768 # 4070 Super (12GB)
+      models:
+        - gemma4:e4b
+        - minicpm-v4
+        - qwen3.5:9b

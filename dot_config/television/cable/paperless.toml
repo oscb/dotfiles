@@ -1,0 +1,41 @@
+[metadata]
+name = "paperless"
+description = "Search Paperless-ngx documents by title, tags and content, open in browser"
+requirements = ["paperless", "jq"]
+
+[source]
+# Pulls recent docs + resolves tag IDs to names (via fish `psub`), emitting:
+#   id <TAB> title <TAB> tag names <TAB> content snippet
+# Television fuzzy-matches the whole line, so title, tags AND content are searchable.
+command = '''
+paperless document list --page-size 500 --json | jq --slurpfile t (paperless tag list --json | psub) -r '(reduce $t[0].data[] as $x ({}; .[($x.id|tostring)]=$x.name)) as $m | .data.results[] | [(.id|tostring), .title, ([.tags[]? | $m[(.|tostring)] // empty] | join(" ")), ((.content // "") | gsub("[\r\n\t]+";" ") | .[0:400])] | @tsv'
+'''
+output = "{split:\t:0}"
+display = "{split:\t:1}   [{split:\t:2}]"
+no_sort = true
+
+[preview]
+command = "paperless document get '{split:\t:0}'"
+
+[ui]
+preview_panel = { size = 55 }
+
+[keybindings]
+enter = "actions:open"
+ctrl-d = "actions:download"
+ctrl-y = "actions:copy-url"
+
+[actions.open]
+description = "Open the document in the browser"
+command = "open 'https://paperless.matchacat.club/documents/{split:\t:0}/details'"
+mode = "fork"
+
+[actions.download]
+description = "Download the document file"
+command = "paperless document download '{split:\t:0}'"
+mode = "execute"
+
+[actions.copy-url]
+description = "Copy the document URL to the clipboard"
+command = "printf '%s' 'https://paperless.matchacat.club/documents/{split:\t:0}/details' | pbcopy"
+mode = "fork"

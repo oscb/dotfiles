@@ -2,7 +2,7 @@
 # PowerShell Script to run winget import on a chezmoi template
 
 # Define the path to the chezmoi template file
-$templatePath = "/winget.json"
+$templatePath = "{{ .chezmoi.sourceDir }}/winget.json"
 
 # Check if the template file exists
 if (Test-Path -Path $templatePath) {

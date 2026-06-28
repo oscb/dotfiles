@@ -1,0 +1,21 @@
+#!/bin/sh
+{{ if eq .chezmoi.os "linux" -}}
+{{ $host := .chezmoi.hostname -}}
+{{ $ctx := 8192 -}}
+{{ if hasKey .ollama.hosts $host }}{{ $ctx = (index .ollama.hosts $host).contextLength }}{{ end -}}
+# Apply systemd drop-in for the ollama service (remote access + tuning).
+# Hashes config so chezmoi re-applies only when these values change.
+if command -v ollama >/dev/null 2>&1 && command -v systemctl >/dev/null 2>&1; then
+  sudo mkdir -p /etc/systemd/system/ollama.service.d
+  sudo tee /etc/systemd/system/ollama.service.d/override.conf >/dev/null <<'EOF'
+[Service]
+{{ range .ollama.serviceEnv -}}
+Environment="{{ . }}"
+{{ end -}}
+Environment="OLLAMA_CONTEXT_LENGTH={{ $ctx }}"
+EOF
+  sudo systemctl daemon-reload
+  sudo systemctl restart ollama
+  echo "Configured ollama.service for {{ $host }} (context {{ $ctx }})."
+fi
+{{ end -}}

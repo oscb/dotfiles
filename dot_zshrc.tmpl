@@ -5,7 +5,7 @@
 
 {{- if eq .chezmoi.os "darwin" -}}
 # Homebrew for Mac
-[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/.linuxbrew/bin/brew shellenv zsh)"
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 {{- end }}
 
 # Auto-attach to zellij on SSH login
@@ -54,8 +54,10 @@ if type brew &>/dev/null; then
   fi
 fi
 autoload -Uz compinit && compinit -i
-# Zoxide autocomplete
-eval "$(zoxide init zsh --cmd cd)"
+# Zoxide autocomplete, skip ClaudeCode because the guy doesn't like it
+if [[ "$CLAUDECODE" != "1" ]]; then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
 
 # Atuin
 eval "$(atuin init zsh)"
@@ -78,15 +80,18 @@ fi
 if command -v brew &> /dev/null; then
   function dump-packages() {
 {{- if eq .chezmoi.os "darwin" }}
-    brew bundle dump -f --all
+    brew bundle dump -f
 {{- else }}
-    brew bundle dump -f --all --file BrewfileLinux
+    brew bundle dump -f --file BrewfileLinux
 {{- end }}
   }
 fi
 
 # Television init
 eval "$(tv init zsh)"
+
+# Worktrees (wt) command
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
