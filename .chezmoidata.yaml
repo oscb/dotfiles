@@ -12,7 +12,7 @@ ollama:
         - gemma4:e2b
         - phi4-mini
         - minicpm-v4.6:latest
-    aurora:
+    Aurora: # Important: capitalized!!
       contextLength: 32768 # 4070 Super (12GB)
       models:
         - gemma4:e2b
