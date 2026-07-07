@@ -210,8 +210,6 @@ brew "ncdu"
 brew "neovim"
 # Modern shell for the GitHub era
 brew "nushell"
-# Create, run, and share large language models (LLMs)
-brew "ollama"
 # General-purpose speech recognition model
 brew "openai-whisper"
 # 7-Zip (high compression file archiver) implementation

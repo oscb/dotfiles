@@ -1,60 +1,425 @@
-tap "1password/tap"
-tap "jandedobbeleer/oh-my-posh"
-tap "humanlogio/tap"
-tap "moghtech/komodo"
-tap "ricardodantas/tap"
-tap "tarkah/tickrs"
-brew "antidote"
+tap "achannarasappa/tap", "https://github.com/achannarasappa/tap.git", trusted: true
+tap "adoptopenjdk/openjdk", trusted: true
+tap "anomalyco/tap"
+tap "antoniorodr/cronboard", trusted: true
+tap "antoniorodr/memo", trusted: true
+tap "archivebox/archivebox", trusted: true
+tap "artginzburg/tap", trusted: true
+tap "bellicose100xp/tap", trusted: true
+tap "crumbyte/noxdir", trusted: true
+tap "derekwisong/datui", trusted: true
+tap "djetelina/tap"
+tap "filosottile/musl-cross", trusted: true
+tap "ggozad/formulas", trusted: true
+tap "herald-email/herald"
+tap "jandedobbeleer/oh-my-posh", trusted: true
+tap "lance0/tap", trusted: true
+tap "lazynop/tap", trusted: true
+tap "loopwork/tap", "https://github.com/mattt/homebrew-tap.git", trusted: true
+tap "matthart1983/tap", trusted: true
+tap "mattt/tap", "https://github.com/mattt/homebrew-tap.git", trusted: true
+tap "microsoft/git", trusted: true
+tap "moghtech/komodo", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "pebble/pebble-sdk", trusted: true
+tap "qmk/qmk", trusted: true
+tap "ricardodantas/tap", trusted: true
+tap "sergiobenitez/osxct", "https://github.com/SergioBenitez/homebrew-osxct", trusted: true
+tap "sikarugir-app/sikarugir", "https://github.com/Sikarugir-App/homebrew-sikarugir", trusted: true
+tap "steipete/tap", trusted: true
+tap "surge-downloader/tap", "https://github.com/SurgeDM/homebrew-tap.git", trusted: true
+tap "surgedm/tap", "https://github.com/SurgeDM/homebrew-tap.git", trusted: true
+tap "tarkah/tickrs", trusted: true
+tap "tlipinski/tap"
+tap "tokuhirom/tap", trusted: true
+tap "xykong/tap"
+tap "yakitrak/yakitrak", trusted: true# Plugin manager for zsh, inspired by antigen and antibody
+brew "antidote"# Cryptography and SSLTLS Toolkit
+brew "openssl@"
+# Send notifications from the command-line to popular notification services
+brew "apprise"
+# Download with resuming and segmented downloading
 brew "aria2"
+# FSF/GNU binutils for cross-compiling to arm-linux
+brew "arm-linux-gnueabihf-binutils"
+# Simple API client (Postman-like) in your terminal
+brew "atac"
+# Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Terminal EPUB Book Reader
+brew "bookokrat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"
+# Multi-shell multi-command argument completer
+brew "carapace"
+# Scan for endpoints, secrets, API keys, file extensions, tokens and more
+brew "cariddi"
+# Create and view interactive cheat sheets for \*nix commands
+brew "cheat"
+# Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
-brew "delta"
+# DuckDuckGo from the terminal
+brew "ddgr"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
+# Display user-friendly message boxes from shell scripts
+brew "dialog"
+# Diff that understands syntax
 brew "difftastic"
-brew "duf"
+# Text processing system for reStructuredText
+brew "docutils"
+# HTTP load testing application written in Rust
 brew "drill"
+# Disk Usage/Free Utility - a better 'df' alternative
+brew "duf"
+# More intuitive version of du in rust
 brew "dust"
+# Collection of reusable C++ library artifacts developed at Facebook
+brew "folly"
+# Modular, composable client/server abstractions framework
+brew "wangle"
+# Facebook's branch of Apache Thrift, including a new C++ server
+brew "fbthrift"
+# Thrift functions for querying information from a service
+brew "fb303"
+# Shared library for Watchman and Eden projects
+brew "edencommon"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
+# Read-only implementation of ext4 for FUSE
+brew "ext4fuse"
+# Modern, maintained replacement for ls
 brew "eza"
+# Test various flash cards
+brew "f3"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
-brew "fzf"
-brew "gh"
-brew "glow"
-brew "git"
-brew "gitui"
-brew "htop"
-brew "just"
-brew "httpie"
-brew "jq"
-brew "lazygit"
-brew "micro"
-brew "miller"
-brew "mise"
-brew "mosh"
-brew "nushell"
-brew "pandoc"
-brew "pgcli"
-brew "procs"
-brew "rclone"
-brew "sampler"
-brew "sd"
-brew "ripgrep"
-brew "semgrep"
-brew "sevenzip"
-brew "television"
-brew "tldr"
-brew "ugit"
-brew "uv"
-brew "ugrep"
-brew "watchman"
-brew "yazi"
-brew "wget"
-brew "yq"
-brew "yt-dlp"
-brew "zellij"
-brew "zoxide"
-brew "zsh"
+# SDL2 compatibility layer that uses SDL3 behind the scenes
+brew "sdl2-compat"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Light HTTP/1.1 server library
+brew "libmicrohttpd"
+# User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
-brew "humanlogio/tap/humanlog"
+# Terminal JSON viewer
+brew "fx"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU awk utility
+brew "gawk"
+# Disk usage analyzer with console interface written in Go
+brew "gdu"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Git extension for versioning large files
+brew "git-lfs"
+# Blazing fast terminal-ui for git written in rust
+brew "gitui"
+# Render markdown on the CLI
+brew "glow"
+# Library for USB device access
+brew "libusb"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Modern download manager that supports all platform
+brew "gopeed"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
+# SMART hard drive monitoring
+brew "smartmontools"
+# Graphical user interface for smartctl
+brew "gsmartcontrol"
+# Development framework for multimedia applications
+brew "gstreamer"
+# Improved top (interactive process viewer)
+brew "htop"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Logs for humans to read
+brew "humanlog"
+# Tool to measure maximum TCP and UDP bandwidth
+brew "iperf"
+# Command-line pager for JSON data
+brew "jless"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Library for USB device access
+brew "libusb-compat"
+# C library for reading, creating, and modifying zip archives
+brew "libzip"
+# Find what models run on your hardware
+brew "llmfit"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Modern and intuitive terminal-based text editor
+brew "micro"
+# Terminal-based visual file manager
+brew "midnight-commander"
+# Like sed, awk, cut, join & sort for name-indexed data such as CSV
+brew "miller"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
+# Remote terminal application
+brew "mosh"
+# 'traceroute' and 'ping' in a single tool
+brew "mtr"
+# NCurses Disk Usage
+brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Modern shell for the GitHub era
+brew "nushell"
+# General-purpose speech recognition model
+brew "openai-whisper"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# CLI for Postgres with auto-completion and syntax highlighting
+brew "pgcli"
+# Modern API client that lives in your terminal
+brew "posting"
+# Modern replacement for ps written in Rust
+brew "procs"
+# Python interface to Tcl/Tk
+brew "python-tk@3.11"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Rsync for cloud storage
+brew "rclone"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Tools for Multiple Arcade Machine Emulator
+brew "rom-tools"
+# Tool for shell commands execution, visualization and alerting
+brew "sampler"
+# Intuitive find & replace CLI
+brew "sd"
+# Library for loading images as SDL surfaces and textures
+brew "sdl2_image"
+# Library for using TrueType fonts in SDL applications
+brew "sdl2_ttf"
+# Easily detect and prevent bugs and anti-patterns in your codebase
+brew "semgrep"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
+# Prettier way to inspect network connections
+brew "snitch"
+# GTK client/libraries for SPICE
+brew "spice-gtk"
+# Formatting technology for Swift source code
+brew "swift-format"
+# Tool to enforce Swift style and conventions
+brew "swiftlint"
+# Swift toolchain installer and manager
+brew "swiftly"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
+# Tool Command Language
+brew "tcl-tk"
+# General purpose fuzzy finder TUI
+brew "television"
+# User interface to the TELNET protocol
+brew "telnet"
+# High-performance, platform-neutral implementation of VNC
+brew "tiger-vnc"
+# Simplified and community-driven man pages
+brew "tldr"
+# Undo git commands. Your damage control git buddy
+brew "ugit"
+# Ultra fast grep with query UI, fuzzy search, archive search, and more
+brew "ugrep"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Watch files and take action when they change
+brew "watchman"
+# Lightweight, configurable incoming webhook server
+brew "webhook"
+# Internet file retriever
+brew "wget"
+# LAN discovery tool with a modern TUI written in Go
+brew "whosthere"
+# CLI for Git worktree management, designed for parallel AI agent workflows
+brew "worktrunk"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
+# Flexible and fast Zsh plugin manager
+brew "zinit"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Terminal stock ticker with live updates and position tracking
+brew "achannarasappa/tap/ticker"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
+# A terminal-based dashboard for managing cron jobs
+brew "antoniorodr/cronboard/cronboard"
+# Interactive JSON query tool with real-time output
+brew "bellicose100xp/tap/jiq"
+# Data Exploration in the Terminal
+brew "derekwisong/datui/datui"
+# TUI for chezmoi
+brew "djetelina/tap/cheznav", trusted: true
+# Linux cross compilers based on musl libc
+brew "filosottile/musl-cross/musl-cross"
+# Terminal email client and inbox cleanup tool
+brew "herald-email/herald/herald", trusted: true
+# Prompt theme engine for any shell
 brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+# Modern network bandwidth testing with TUI - iperf3 replacement
+brew "lance0/tap/xfr"
+# TUI for managing .env files
+brew "lazynop/tap/lazyenv"
+# Real-time network diagnostics in your terminal — zero config, instant visibility
+brew "matthart1983/tap/netwatch"
+# Cli to interact with Komodo Core
+brew "moghtech/komodo/km"
+# Quantum Mechanical Keyboard (QMK) Firmware
+brew "qmk/qmk/qmk"
+# Terminal-based automated file organizer inspired by Hazel
+brew "ricardodantas/tap/hazelnut"
+# Realtime ticker data in your terminal 📈
 brew "tarkah/tickrs/tickrs"
+# Interactive TUI pipeline editor built for rapid iteration
+brew "tlipinski/tap/rura", trusted: true
+# Docker Compose Viewer - A TUI tool for monitoring Docker Compose applications
+brew "tokuhirom/tap/dcv"
+brew "yakitrak/yakitrak/notesmd-cli", link: false
+vscode "13xforever.language-x86-64-assembly"
+vscode "1password.op-vscode"
+vscode "aaron-bond.better-comments"
+vscode "achil.vscode-javascript-repl"
+vscode "alefragnani.bookmarks"
+vscode "alefragnani.project-manager"
+vscode "anthropic.claude-code"
+vscode "astro-build.astro-vscode"
+vscode "bradlc.vscode-tailwindcss"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
+vscode "catppuccin.catppuccin-vsc-pack"
+vscode "christian-kohler.path-intellisense"
+vscode "ciantic.keymapceditor-vsc"
+vscode "codezombiech.gitignore"
+vscode "dart-code.dart-code"
+vscode "davidanson.vscode-markdownlint"
+vscode "dbaeumer.vscode-eslint"
+vscode "denoland.vscode-deno"
+vscode "docker.docker"
+vscode "eamodio.gitlens"
+vscode "esbenp.prettier-vscode"
+vscode "felixjb.testify"
+vscode "file-icons.file-icons"
+vscode "github.codespaces"
+vscode "github.vscode-github-actions"
+vscode "github.vscode-pull-request-github"
+vscode "grapecity.gc-excelviewer"
+vscode "gruntfuggly.todo-tree"
+vscode "hediet.debug-visualizer"
+vscode "humao.rest-client"
+vscode "jeff-hykin.better-cpp-syntax"
+vscode "johnpapa.vscode-peacock"
+vscode "joshbolduc.commitlint"
+vscode "kisstkondoros.vscode-gutter-preview"
+vscode "llvm-vs-code-extensions.lldb-dap"
+vscode "llvm-vs-code-extensions.vscode-clangd"
+vscode "matthewpi.caddyfile-support"
+vscode "mechatroner.rainbow-csv"
+vscode "miguelsolorio.fluent-icons"
+vscode "mikestead.dotenv"
+vscode "ms-azuretools.vscode-azure-github-copilot"
+vscode "ms-azuretools.vscode-azure-mcp-server"
+vscode "ms-azuretools.vscode-azureresourcegroups"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-cst-e.vscode-devskim"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-python.debugpy"
+vscode "ms-python.isort"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode-remote.remote-wsl"
+vscode "ms-vscode-remote.vscode-remote-extensionpack"
+vscode "ms-vscode.cmake-tools"
+vscode "ms-vscode.cpp-devtools"
+vscode "ms-vscode.cpptools"
+vscode "ms-vscode.cpptools-extension-pack"
+vscode "ms-vscode.cpptools-themes"
+vscode "ms-vscode.extension-test-runner"
+vscode "ms-vscode.hexeditor"
+vscode "ms-vscode.makefile-tools"
+vscode "ms-vscode.remote-explorer"
+vscode "ms-vscode.remote-server"
+vscode "ms-vscode.vscode-serial-monitor"
+vscode "ms-vscode.vscode-typescript-next"
+vscode "orta.vscode-jest"
+vscode "orta.vscode-ts-markdown-to-playground"
+vscode "orta.vscode-twoslash-queries"
+vscode "pbkit.vscode-pbkit"
+vscode "pkief.material-icon-theme"
+vscode "pmneo.tsimporter"
+vscode "pollywoggames.pico8-ls"
+vscode "redhat.extester-runner"
+vscode "redhat.vscode-xml"
+vscode "redhat.vscode-yaml"
+vscode "rust-lang.rust-analyzer"
+vscode "ryzngard.vscode-header-source"
+vscode "styled-components.vscode-styled-components"
+vscode "sweetpad.sweetpad"
+vscode "swiftlang.swift-vscode"
+vscode "tamasfe.even-better-toml"
+vscode "typescriptteam.native-preview"
+vscode "unifiedjs.vscode-mdx"
+vscode "vadimcn.vscode-lldb"
+vscode "vitest.explorer"
+vscode "vscjava.vscode-java-dependency"
+vscode "vue.volar"
+vscode "wattenberger.footsteps"
+vscode "xyc.vscode-mdx-preview"
+vscode "yzhang.markdown-all-in-one"
+go "cmd/go"
+go "cmd/gofmt"
+go "github.com/renatoworks/oh-my-reddit"
+cargo "basalt-tui"
+cargo "clin-rs"
+cargo "darya"
+cargo "paperless-cli"
+cargo "rustlings"
+uv "mcp-proxy"
