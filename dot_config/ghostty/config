@@ -43,6 +43,8 @@
 # resize-overlay-duration = 4s 200ms
 
 theme = Catppuccin Mocha
+background-opacity=0.8
+background-blur=true
 font-family = Monaspace Neon NF
 font-size = 14
 shell-integration = zsh
@@ -51,3 +53,8 @@ cursor-style=block
 
 # SSH Fixing Terminfo integration (https://ghostty.org/docs/help/terminfo#ssh)
 shell-integration-features = ssh-terminfo,ssh-env
+
+# Quick Terminal 
+#keybind = global:cmd+shift+alt+ctrl+backquote=toggle_quick_terminal
+keybind = global:cmd+backquote=toggle_quick_terminal
+

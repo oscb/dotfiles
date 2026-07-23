@@ -5,7 +5,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Ollama (Infinity)",
       "options": {
-        "baseURL": "https://ollama-infinity.matchacat.club/v1",
+        "baseURL": "http://infinity.local:11434/v1",
       },
       "models": {
         "phi4-mini": {
@@ -17,7 +17,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Ollama (Aurora)",
       "options": {
-        "baseURL": "https://ollama-infinity.matchacat.club/v1",
+        "baseURL": "http://aurora.local:11434/v1",
       },
       "models": {
         "qwen3.5:9b": {
@@ -27,6 +27,13 @@
           "name": "gemma4",
         },
       },
+    },
+  },
+  "mcp": {
+    "home-assistant": {
+      "type": "remote",
+      "url": "http://192.168.50.146:9583/private_3fJbuEgHqkD5zb-5KBAAJg",
+      "enabled": true,
     },
   },
 }

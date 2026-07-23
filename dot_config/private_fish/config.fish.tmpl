@@ -111,9 +111,9 @@ end
 if type -q brew
     function dump-packages
 {{- if eq .chezmoi.os "darwin" }}
-        brew bundle dump -f --all
+        brew bundle dump -f
 {{- else }}
-        brew bundle dump -f --all --file BrewfileLinux
+        brew bundle dump -f --file BrewfileLinux
 {{- end }}
     end
 end
