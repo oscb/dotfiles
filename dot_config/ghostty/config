@@ -56,5 +56,5 @@ shell-integration-features = ssh-terminfo,ssh-env
 
 # Quick Terminal 
 #keybind = global:cmd+shift+alt+ctrl+backquote=toggle_quick_terminal
-keybind = global:cmd+backquote=toggle_quick_terminal
+keybind = global:cmd+escape=toggle_quick_terminal
 
