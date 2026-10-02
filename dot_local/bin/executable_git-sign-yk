@@ -1,0 +1,45 @@
+#!/bin/sh
+# git-sign-yk — gpg.ssh.program wrapper for git: signs with the key that belongs to
+# whichever YubiKey is plugged in, so you never have to switch user.signingkey.
+#
+# Install:  install -m 755 git-sign-yk ~/.local/bin/git-sign-yk
+#           git config --global gpg.ssh.program ~/.local/bin/git-sign-yk
+# Edit the serial → key map below (get serials with: ykman list --serials).
+
+YKMAN=/opt/homebrew/bin/ykman
+KEYGEN=/opt/homebrew/bin/ssh-keygen
+
+# ---- serial → signing key map (EDIT THESE) ----
+key_for_serial() {
+    case "$1" in
+        20480595) echo "$HOME/.ssh/id_ed25519_sk_git-primary" ;;
+        20480589) echo "$HOME/.ssh/id_ed25519_sk_git-secondary" ;;
+        20348122) echo "$HOME/.ssh/id_ed25519_sk_git-backup" ;;
+    esac
+}
+
+# Only signing ("ssh-keygen -Y sign …") is rewritten. Verification calls
+# (-Y verify / find-principals / check-novalidate) also use -f, but for the
+# allowed_signers file, so they must pass through untouched.
+if [ "$1" = "-Y" ] && [ "$2" = "sign" ]; then
+    key=""
+    for s in $("$YKMAN" list --serials 2>/dev/null); do
+        key=$(key_for_serial "$s")
+        [ -n "$key" ] && break
+    done
+
+    if [ -n "$key" ]; then
+        # Replace the value after -f with the key for the plugged-in YubiKey
+        replace=0; first=1
+        for a do
+            [ $first = 1 ] && { set --; first=0; }
+            if [ $replace = 1 ]; then a=$key; replace=0; fi
+            [ "$a" = "-f" ] && replace=1
+            set -- "$@" "$a"
+        done
+    else
+        echo "git-sign-yk: no known YubiKey plugged in — trying user.signingkey as configured" >&2
+    fi
+fi
+
+exec "$KEYGEN" "$@"

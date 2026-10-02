@@ -1,2 +1,5 @@
 .DS_Store
 bin/chezmoi
+**/dot_claude/settings.local.json
+**/.claude/settings.local.json
+dot_local/share/private_mc/private_history

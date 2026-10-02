@@ -1,0 +1,21 @@
+# gitleaks config for this dotfiles repo.
+#
+# The stock ruleset is good at provider-shaped keys (AWS, GitHub, Stripe) but it
+# does NOT catch bare endpoint tokens — the Home Assistant MCP URL that used to
+# live in dot_config/opencode/opencode.jsonc scanned clean against defaults.
+# The rules below cover the shapes that actually show up in a homelab config.
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "url-embedded-endpoint-token"
+description = "URL with a secret-looking token in its path (MCP / webhook / hook endpoints)"
+regex = '''https?://[^\s"'`]+/(?:private|webhook|hook|token)[_-][A-Za-z0-9_\-]{16,}'''
+tags = ["url", "token", "homelab"]
+
+[[rules]]
+id = "jwt-token"
+description = "JSON Web Token (Home Assistant long-lived access tokens are JWTs)"
+regex = '''\beyJ[A-Za-z0-9_-]{8,}\.eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}'''
+tags = ["jwt", "token"]

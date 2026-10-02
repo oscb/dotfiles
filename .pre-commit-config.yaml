@@ -1,0 +1,13 @@
+# Secret scanning for this dotfiles repo.
+#
+# Enable once per clone (see README.md):
+#   brew install pre-commit gitleaks
+#   pre-commit install
+#
+# After that, `gitleaks protect --staged` runs on every commit and blocks the
+# commit if a staged change contains something that looks like a credential.
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks

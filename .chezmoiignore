@@ -3,6 +3,7 @@ README.md
 
 {{ if ne .chezmoi.os "darwin" }}
 Brewfile
+.local/bin/git-sign-yk
 {{ end }}
 
 {{ if ne .chezmoi.os "windows"}}
@@ -25,3 +26,9 @@ BrewfileLinux
 Archfile
 Archfile.aur
 {{ end }}
+
+# Claude Code local permission files
+**/.claude/settings.local.json
+
+# Tool history files: machine-local state, not configuration.
+.local/share/mc/history

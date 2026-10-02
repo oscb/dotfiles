@@ -12,7 +12,6 @@
       "Bash(zellij list-sessions *)",
       "Bash(zellij list-aliases *)",
       "Read(//Users/oscb/.config/zellij/**)",
-      "Read(//Users/oscb/.ssh/**)",
       "Bash(zellij attach *)",
       "Bash(zellij delete-session *)",
       "Bash(zellij delete-all-sessions *)",
@@ -30,7 +29,6 @@
       "Bash(paperless document *)",
       "Bash(paperless config *)",
       "Bash(paperless tag *)",
-      "Bash(fish *)",
       "Bash(echo \"=== exit: $? ===\")",
       "Bash(functions tv_smart_autocomplete)"
     ]

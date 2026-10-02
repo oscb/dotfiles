@@ -1,8 +1,6 @@
 # Arch Linux AUR packages
 # Generated with: pacman -Qqem
 # To regenerate: pacman -Qqem > Archfile.aur
-1password
-1password-cli
 appimagelauncher
 google-chrome
 razergenie

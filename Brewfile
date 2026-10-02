@@ -1,5 +1,6 @@
 tap "achannarasappa/tap", "https://github.com/achannarasappa/tap.git", trusted: true
 tap "adoptopenjdk/openjdk", trusted: true
+tap "agavra/tap"
 tap "anomalyco/tap"
 tap "antoniorodr/cronboard", trusted: true
 tap "antoniorodr/memo", trusted: true
@@ -8,7 +9,9 @@ tap "artginzburg/tap", trusted: true
 tap "bellicose100xp/tap", trusted: true
 tap "blacktop/tap", trusted: true
 tap "cameroncooke/axe", trusted: true
+tap "cardpointers/tap", trusted: true
 tap "crumbyte/noxdir", trusted: true
+tap "darrylmorley/whatcable"
 tap "derekwisong/datui", trusted: true
 tap "djetelina/tap"
 tap "filosottile/musl-cross", trusted: true
@@ -31,13 +34,16 @@ tap "qmk/qmk", trusted: true
 tap "ricardodantas/tap", trusted: true
 tap "rudrankriyam/tap", trusted: true
 tap "sergiobenitez/osxct", "https://github.com/SergioBenitez/homebrew-osxct", trusted: true
+tap "serkanyersen/dotstate"
 tap "sikarugir-app/sikarugir", "https://github.com/Sikarugir-App/homebrew-sikarugir", trusted: true
 tap "steipete/tap", trusted: true
 tap "surge-downloader/tap", "https://github.com/SurgeDM/homebrew-tap.git", trusted: true
 tap "surgedm/tap", "https://github.com/SurgeDM/homebrew-tap.git", trusted: true
 tap "tarkah/tickrs", trusted: true
+tap "termix-ssh/termix", "https://github.com/Termix-SSH/Termix.git", trusted: true
 tap "tlipinski/tap"
 tap "tokuhirom/tap", trusted: true
+tap "westpoint-io/lazyrsync"
 tap "wix-incubator/brew", "https://github.com/wix-incubator/homebrew-brew.git", trusted: true
 tap "wix/brew", "https://github.com/wix-incubator/homebrew-brew.git"
 tap "xykong/tap"
@@ -45,7 +51,7 @@ tap "yakitrak/yakitrak", trusted: true
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
+brew "openssl@3", link: true
 # Send notifications from the command-line to popular notification services
 brew "apprise"
 # Download with resuming and segmented downloading
@@ -86,8 +92,6 @@ brew "dialog"
 brew "difftastic"
 # Text processing system for reStructuredText
 brew "docutils"
-# HTTP load testing application written in Rust
-brew "drill"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
 # More intuitive version of du in rust
@@ -140,6 +144,8 @@ brew "git"
 brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
+# Audit git repos for secrets
+brew "gitleaks"
 # Blazing fast terminal-ui for git written in rust
 brew "gitui"
 # Render markdown on the CLI
@@ -150,7 +156,7 @@ brew "libusb"
 brew "gnupg"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
-# Modern download manager that supports all platform
+# Multi protocol download manager
 brew "gopeed"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
@@ -160,12 +166,16 @@ brew "smartmontools"
 brew "gsmartcontrol"
 # Development framework for multimedia applications
 brew "gstreamer"
+# Post-modern modal text editor
+brew "helix"
 # Improved top (interactive process viewer)
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Logs for humans to read
 brew "humanlog"
+# Review-first terminal diff viewer for agent-authored changesets
+brew "hunk"
 # Install and debug iPhone apps from the command-line
 brew "ios-deploy"
 # Tool to measure maximum TCP and UDP bandwidth
@@ -174,6 +184,8 @@ brew "iperf"
 brew "jless"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Copy/paste detector for programming source code
+brew "jscpd"
 # Handy way to save and run project-specific commands
 brew "just"
 # Kubernetes command-line interface
@@ -208,10 +220,14 @@ brew "mtr"
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
 # Modern shell for the GitHub era
 brew "nushell"
 # General-purpose speech recognition model
 brew "openai-whisper"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Swiss-army knife of markup format conversion
@@ -262,10 +278,6 @@ brew "tailscale"
 brew "tcl-tk"
 # General purpose fuzzy finder TUI
 brew "television"
-# User interface to the TELNET protocol
-brew "telnet"
-# High-performance, platform-neutral implementation of VNC
-brew "tiger-vnc"
 # Simplified and community-driven man pages
 brew "tldr"
 # Undo git commands. Your damage control git buddy
@@ -282,6 +294,8 @@ brew "webhook"
 brew "wget"
 # LAN discovery tool with a modern TUI written in Go
 brew "whosthere"
+# Library to create, extract, and modify Windows Imaging files
+brew "wimlib"
 # CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
 # Little beautifier tool for xcodebuild
@@ -291,9 +305,11 @@ brew "xcode-build-server"
 # Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
 # Command-line tool to install and switch between multiple versions of Xcode
-brew "xcodes", link: false
+brew "xcodes"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Tool for managing your YubiKey configuration
+brew "ykman"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # Feature-rich command-line audio/video downloader
@@ -306,8 +322,12 @@ brew "zinit"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Tool for writing better scripts
+brew "zx"
 # Terminal stock ticker with live updates and position tracking
 brew "achannarasappa/tap/ticker"
+# Terminal UI for Code Reviews - review AI-generated diffs like a GitHub PR
+brew "agavra/tap/tuicr", trusted: true
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode", trusted: true
 # A terminal-based dashboard for managing cron jobs
@@ -322,6 +342,8 @@ brew "bellicose100xp/tap/jiq"
 brew "blacktop/tap/ipsw"
 # CLI tool for interacting with iOS Simulators via accessibility and HID APIs
 brew "cameroncooke/axe/axe"
+# CardPointers CLI — manage your credit card rewards from the terminal
+brew "cardpointers/tap/cardpointers"
 # Data Exploration in the Terminal
 brew "derekwisong/datui/datui"
 # TUI for chezmoi
@@ -333,11 +355,13 @@ brew "herald-email/herald/herald", trusted: true
 # macOS command line utility to configure multi-display resolutions and arrangements. Essentially XRandR for macOS.
 brew "jakehilborn/jakehilborn/displayplacer"
 # Prompt theme engine for any shell
-brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+brew "jandedobbeleer/oh-my-posh/oh-my-posh", trusted: true
 # Modern network bandwidth testing with TUI - iperf3 replacement
 brew "lance0/tap/xfr"
 # TUI for managing .env files
 brew "lazynop/tap/lazyenv"
+# Single-host disk diagnostics TUI — sibling to netwatch and syswatch
+brew "matthart1983/tap/diskwatch", trusted: true
 # Real-time network diagnostics in your terminal — zero config, instant visibility
 brew "matthart1983/tap/netwatch"
 # Cli to interact with Komodo Core
@@ -348,27 +372,29 @@ brew "qmk/qmk/qmk"
 brew "ricardodantas/tap/hazelnut"
 # Fast, AI-agent friendly CLI for App Store Connect
 brew "rudrankriyam/tap/asc"
+# A modern, secure, and user-friendly dotfile manager built with Rust
+brew "serkanyersen/dotstate/dotstate", trusted: true
 # Realtime ticker data in your terminal 📈
 brew "tarkah/tickrs/tickrs"
 # Interactive TUI pipeline editor built for rapid iteration
 brew "tlipinski/tap/rura", trusted: true
 # Docker Compose Viewer - A TUI tool for monitoring Docker Compose applications
 brew "tokuhirom/tap/dcv"
+# Terminal UI for rsync — profiles, dry-run diff preview, live progress
+brew "westpoint-io/lazyrsync/lazyrsync", trusted: true
 # Apple simulator utilities
 brew "wix/brew/applesimutils"
-brew "yakitrak/yakitrak/notesmd-cli", link: false
+brew "yakitrak/yakitrak/notesmd-cli", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Command-line interface for 1Password
-cask "1password-cli"
 # Image editing and design software
 cask "affinity"
-# Utility to add Dynamic Island like features to notch area
-cask "alcove"
 # Tools for building Android applications
 cask "android-studio"
 # Agent orchestration platform
 cask "antigravity"
+# Terminal interface for Antigravity agents
+cask "antigravity-cli"
 # Temporary notes with calculations and extensible features
 cask "antinote"
 # Inspect application bundles
@@ -379,8 +405,6 @@ cask "autodesk-fusion"
 cask "balenaetcher"
 # 3D creation suite
 cask "blender"
-# Monitors common persistence locations
-cask "blockblock"
 # E-books management software
 cask "calibre"
 # Anthropic's official Claude AI desktop app
@@ -391,17 +415,18 @@ cask "claude-code"
 cask "copilot-cli"
 # Server and cloud storage browser
 cask "cyberduck"
-cask "wix-incubator/brew/detox-instruments"
 # UI to create reproducible developer environments based on a devcontainer.json
 cask "devpod"
 # Voice and text chat software
 cask "discord"
 # Open-source physical access (aka 'evil maid') attack detector
 cask "do-not-disturb"
-# Window peeking utility app
-cask "dockdoor"
+# Dock replacement with widgets, profiles and window previews
+cask "dockdoor-pro"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
+# Drag and drop file shelf
+cask "droppy"
 # Per-application volume mixer, equalizer, and audio router
 cask "finetune"
 # Markdown previews in Finder QuickLook with diagrams and math
@@ -421,6 +446,8 @@ cask "ghostty"
 cask "github"
 # 2D and 3D game engine
 cask "godot"
+# Web browser
+cask "google-chrome"
 # Open Source Multimedia Framework
 cask "gstreamer-runtime"
 # Speech to text application
@@ -443,16 +470,12 @@ cask "isimulator"
 cask "itch"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Menu bar manager
-cask "jordanbaird-ice"
 # Tool to show what is persistently installed on the computer
 cask "knockknock"
 # Customise mouse behavior
 cask "linearmouse"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
-# Support for Logitech G gear
-cask "logitech-g-hub"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
 # File system integration
@@ -471,14 +494,16 @@ cask "crumbyte/noxdir/noxdir"
 cask "obsidian"
 # Cloud storage client
 cask "onedrive"
+# Local-first alternative to Logitech Options+ for HID++ devices
+cask "openlogi"
 # Open source RGB lighting control that doesn't depend on manufacturer software
 cask "openrgb"
-# Replacement for Docker Desktop
-cask "orbstack"
 # Monitors computer mic and webcam
 cask "oversight"
 # VPN client
 cask "privadovpn"
+# Open-source application manager and system cleaner
+cask "puremac"
 # Companion app for Flipper Zero devices
 cask "qflipper"
 # Thumbnails, static previews, cover art and metadata for video files
@@ -511,10 +536,14 @@ cask "swiftformat-for-xcode"
 cask "syncthing-app"
 # Messaging app with a focus on speed and security
 cask "telegram"
+# Menu bar manager
+cask "thaw"
 # Flexible level editor
 cask "tiled"
 # Create, maintain, and interact with Xcode projects at scale
 cask "tuist"
+# Newsreader and Usenet client
+cask "usenapp"
 # Virtual machines UI using QEMU
 cask "utm"
 # Keyboard configurator
@@ -523,6 +552,8 @@ cask "via"
 cask "visual-studio-code"
 # Web browser with built-in email client focusing on customization and control
 cask "vivaldi"
+# Menu bar app for USB-C cable diagnostics
+cask "darrylmorley/whatcable/whatcable", trusted: true
 # Compatibility layer to run Windows applications
 cask "wine-stable"
 # Network protocol analyzer
@@ -543,7 +574,6 @@ cask "zed"
 cask "zoom"
 # OpenJDK distribution from Azul
 cask "zulu@11"
-mas "1Password for Safari", id: 1569813296
 mas "Actions", id: 1586435171
 mas "AdGuard for Safari", id: 1440147259
 mas "AdGuardHome", id: 1543143740
@@ -573,6 +603,7 @@ mas "Ivory", id: 6444602274
 mas "Jayson", id: 1468691718
 mas "Keepa - Price Tracker", id: 1533805339
 mas "Keynote", id: 409183694
+mas "Knockoff", id: 6788401939
 mas "Mela", id: 1568924476
 mas "My Links", id: 6504573402
 mas "News Explorer", id: 1032670789
@@ -586,7 +617,7 @@ mas "Outpost", id: 6749519388
 mas "Pages", id: 409201541
 mas "Pandan", id: 1569600264
 mas "Paperparrot", id: 1663665267
-mas "Parachute", id: 6748614170
+mas "Parachute Backup", id: 6748614170
 mas "Photomator", id: 1444636541
 mas "Picasso", id: 6472062986
 mas "Pieoneer", id: 6739781207
@@ -619,7 +650,6 @@ mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
 mas "Yomu", id: 562211012
 vscode "13xforever.language-x86-64-assembly"
-vscode "1password.op-vscode"
 vscode "aaron-bond.better-comments"
 vscode "achil.vscode-javascript-repl"
 vscode "alefragnani.bookmarks"
@@ -704,6 +734,7 @@ vscode "pollywoggames.pico8-ls"
 vscode "redhat.extester-runner"
 vscode "redhat.vscode-xml"
 vscode "redhat.vscode-yaml"
+vscode "redth.mobile-canvas"
 vscode "rust-lang.rust-analyzer"
 vscode "ryzngard.vscode-header-source"
 vscode "styled-components.vscode-styled-components"
