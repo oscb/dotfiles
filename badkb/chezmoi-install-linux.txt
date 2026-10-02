@@ -1,0 +1,10 @@
+REM Install chezmoi Linux
+REM --- Open a terminal ---
+
+REM Linux: Open terminal with common shortcut
+CONTROL ALT t
+DELAY 1500
+
+REM --- Run chezmoi install ---
+STRING sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply oscb
+ENTER

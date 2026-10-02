@@ -1,4 +1,7 @@
 {
+  "permissions": {
+    "defaultMode": "auto"
+  },
   "model": "opus",
   "statusLine": {
     "type": "command",
@@ -21,11 +24,6 @@
     "code-simplifier@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
-  "tui": "fullscreen",
-  "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true,
   "extraKnownMarketplaces": {
     "axiom-marketplace": {
       "source": {
@@ -33,5 +31,21 @@
         "repo": "CharlesWiltgen/Axiom"
       }
     }
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "terminalProgressBarEnabled": true,
+  "remoteControlAtStartup": true,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Bash(xcodebuild:*)",
+      "Bash(xcrun simctl:*)",
+      "Bash(xcode-select -p)",
+      "Bash(plutil -p:*)"
+    ]
   }
 }

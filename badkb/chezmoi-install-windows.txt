@@ -1,0 +1,13 @@
+REM Install chezmoi Windows
+REM --- Open a terminal ---
+
+REM Windows: Open Run dialog, launch PowerShell
+GUI r
+DELAY 1000
+STRING powershell
+ENTER
+DELAY 1500
+
+REM --- Run chezmoi install ---
+STRING sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply oscb
+ENTER

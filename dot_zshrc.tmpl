@@ -100,3 +100,9 @@ alias ssh='ssh.exe'
 alias ssh-add='ssh-add.exe'
 {{   end }}
 {{ end }}
+
+
+# Handy commands
+
+# Copy all text from zellij
+abbr --add copy-pane 'zellij action dump-screen --full | fish_clipboard_copy'
