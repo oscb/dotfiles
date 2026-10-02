@@ -1,5 +1,5 @@
+{{- if or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin") -}}
 #!/bin/sh
-{{ if or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin") -}}
 # Install Ollama via the official installer (includes GPU support).
 # Not installed through Homebrew/pacman so NVIDIA/AMD/Metal acceleration is detected.
 if command -v ollama >/dev/null 2>&1; then

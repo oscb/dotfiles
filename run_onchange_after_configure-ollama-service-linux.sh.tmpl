@@ -1,5 +1,5 @@
+{{- if eq .chezmoi.os "linux" -}}
 #!/bin/sh
-{{ if eq .chezmoi.os "linux" -}}
 {{ $host := .chezmoi.hostname -}}
 {{ $ctx := 8192 -}}
 {{ if hasKey .ollama.hosts $host }}{{ $ctx = (index .ollama.hosts $host).contextLength }}{{ end -}}

@@ -1,6 +1,6 @@
+{{- $host := .chezmoi.hostname -}}
+{{- if and (or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin")) (hasKey .ollama.hosts $host) -}}
 #!/bin/sh
-{{ $host := .chezmoi.hostname -}}
-{{ if hasKey .ollama.hosts $host -}}
 {{ $cfg := index .ollama.hosts $host -}}
 # Pull Ollama models this machine ({{ $host }}) depends on. Hashes the model
 # list so chezmoi re-runs only when {{ $host }}'s models change.
@@ -12,7 +12,4 @@ if command -v ollama >/dev/null 2>&1; then
 else
   echo "ollama not installed, skipping model pull."
 fi
-{{ else -}}
-# No models configured for {{ $host }} in .chezmoidata.yaml; nothing to pull.
-:
 {{ end -}}
